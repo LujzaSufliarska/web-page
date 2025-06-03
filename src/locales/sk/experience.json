@@ -1,0 +1,22 @@
+{
+    "title": "Pracovné Skúsenosti",
+    "positions": {
+        "mbank1": {
+        "position": "Regresný Tester Digitálnych Kanálov",
+        "period": "Júl 2022 - Jún 2025",
+        "company_name": "mBank SK",
+        "company_location": "Hybrid (Bratislava, Slovakia)",
+        "company_type": "Part-time",
+        "attributes": "Regresné Testovanie, Manuálne Testovanie, Jira"
+        },
+
+        "mbank2": {
+        "position": "Špecialista pre tvorbu správ a reportov",
+        "period": "Júl 2025 - súčastnosť",
+        "company_name": "mBank SK",
+        "company_location": "Hybrid (Bratislava, Slovakia)",
+        "company_type": "Part-time",
+        "attributes": "Oracle SQL Developer, SQL Server Management Studio, Excel, Jira, Power BI"
+        }
+    }
+}

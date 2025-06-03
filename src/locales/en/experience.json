@@ -1,0 +1,22 @@
+{
+    "title": "Experience",
+    "positions": {
+        "mbank1": {
+            "position": "Regression Tester of Digital Channels",
+            "period": "July 2022 - June 2025",
+            "company_name": "mBank SK",
+            "company_location": "Hybrid (Bratislava, Slovakia)",
+            "company_type": "Part-time",
+            "attributes": "Regression Testing, Manual Testing, Jira"
+        },
+
+        "mbank2": {
+            "position": "Reporting Specialist",
+            "period": "July 2025 - present",
+            "company_name": "mBank SK",
+            "company_location": "Hybrid (Bratislava, Slovakia)",
+            "company_type": "Part-time",
+            "attributes": "Oracle SQL Developer, SQL Server Management Studio, Excel, Jira, Power BI"
+        }
+    }
+}
