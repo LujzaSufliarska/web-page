@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  /* Light theme */
+  --bcg: #F6F6F6;
+  --bcg-text: #000000;
+
+  --primary: #004A8F;
+  --primary-text: #FFFFFF;
+}
+
+.dark {
+  /* Dark theme */
+  --bcg: #0F0F0F;
+  --bcg-text: #FFFFFF;
+  
+  --primary: #70BAFF;
+  --primary-text: #000000;
+}
+
+html,
+body,
+#root,
+.app{
+    height: 100%;
+    width: 100%t;
+    font-family: 'Inter', sans-serif;
+}

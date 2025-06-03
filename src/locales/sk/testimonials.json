@@ -1,0 +1,21 @@
+{
+    "title": "Odporúčania",
+    "testimonials": {
+        "testimonial1": {
+            "name": "John Doe",
+            "position": "Softvérový inžinier",
+            "text": ",,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum.”",
+            "img": "/Lujza_Šufliarska_selfie.png"
+        },
+        "testimonial2": {
+            "name": "Jane Smith",
+            "position": "Produktový manažér",
+            "text": ",,Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum.”"
+        },
+        "testimonial3": {
+            "name": "AAA Smith",
+            "position": "AAAA Manager",
+            "text": ",,AAAAAAAAAAAAAAAAAA”"
+        }
+    }
+}

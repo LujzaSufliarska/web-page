@@ -1,0 +1,41 @@
+{
+    "title": "Projects",
+    "filters": "All, Web, Mobile, Other",
+    "projects": {
+        "project1": {
+            "img": "/project1.png",
+            "name": "Project 1",
+            "description": "This is a description of Project One.",
+            "type": "Web",
+            "skills": "Skill 1, Skill 2, Skill 3, Skill 4"
+        },
+        "project2": {
+            "img": "",
+            "name": "Project 2",
+            "description": "This is a description of Project 2.",
+            "type": "Mobile",
+            "skills": "Skill 1, Skill 2, Skill 3"
+        },
+        "project3": {
+            "img": "",
+            "name": "Project 3",
+            "description": "This is a description of Project 3.",
+            "type": "Other",
+            "skills": "Skill 1, Skill 2"
+        },
+        "project4": {
+            "img": "",
+            "name": "Project 4",
+            "description": "This is a description of Project 4.",
+            "type": "Other",
+            "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5, Skill 6"
+        },
+        "project5": {
+            "img": "",
+            "name": "Project 5",
+            "description": "This is a description of Project 5.",
+            "type": "Other",
+            "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5"
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "title": "Projekty",
+    "filters": "Všetky, Web, Mobil, Iné",
+    "projects": {
+        "project1": {
+            "img": "/project1.png",
+            "name": "Projekt 1",
+            "description": "Toto je popis k projektu 1.",
+            "type": "Web",
+            "skills": "Skill 1, Skill 2, Skill 3, Skill 4"
+        },
+        "project2": {
+            "img": "",
+            "name": "Projekt 2",
+            "description": "Toto je popis k projektu 2.",
+            "type": "Mobil",
+            "skills": "Skill 1, Skill 2, Skill 3"
+        },
+        "project3": {
+            "img": "",
+            "name": "Project Three",
+            "description": "This is a description of Project 3.",
+            "type": "Iné",
+            "skills": "Skill 1, Skill 2"
+        },
+        "project4": {
+            "img": "",
+            "name": "Projekt 4",
+            "description": "Toto je popis k projektu 4.",
+            "type": "Iné",
+            "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5, Skill 6"
+        },
+        "project5": {
+            "img": "",
+            "name": "Projekt 5",
+            "description": "Toto je popis k projektu 5.",
+            "type": "Iné",
+            "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5"
+        }
+    }
+}
