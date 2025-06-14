@@ -14,16 +14,26 @@ export default function AboutSection() {
         <SectionHeader>{t("title1")}</SectionHeader>
 
         <div className="flex flex-col text-default text-[var(--bcg-text)] text-justify gap-2">
-          <p>
+          {/* <p>
             <Trans
               i18nKey="text1"
-              components={
-                {
-                  highlight: <TextHighlight />,
-                } as unknown as { [key: string]: React.ReactElement }
-              }
+              components={{ highlight: <TextHighlight /> }} // error
             />
+          </p> */}
+          <p>
+            {t("text1")
+              .split(/(<highlight>.*?<\/highlight>)/g)
+              .map((part, index) => {
+                const match = part.match(/<highlight>(.*?)<\/highlight>/);
+
+                if (match) {
+                  return <TextHighlight key={index}>{match[1]}</TextHighlight>;
+                }
+
+                return <React.Fragment key={index}>{part}</React.Fragment>;
+              })}
           </p>
+
           <p>{t("text2")}</p>
         </div>
       </div>

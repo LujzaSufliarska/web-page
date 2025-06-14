@@ -17,13 +17,13 @@ function App() {
     </BrowserRouter>
 
     // TODO add whether I'm open to work
+    // TODO language switch
     // TODO fix project filter bar
     // TODO implement project filter
-    // TODO language switch
-    // TODO projects page
+    // TODO projects page?
     // TODO project description on hover
     // TODO Responsive
-    // TODO accessibility pre nevydiacich
+    // TODO accessibility pre nevydiacich?
   );
 }
 

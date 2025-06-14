@@ -3,9 +3,16 @@ import Button from "../button/Button";
 import { GoDownload } from "react-icons/go";
 import Socials from "../iconElements/Socials";
 import { useTranslation } from "react-i18next";
+import Banner from "../banner/Banner";
 
 export default function HeroSection() {
   const { t } = useTranslation("home");
+
+  const bannerPossitiveText = t("Open to work! Contact me!");
+  const bannerNegativeText = t(
+    "Not looking for a job at the moment. But feel free to contact me!"
+  );
+  const lookingForWork = false;
 
   const handleDownload = () => {};
 
@@ -35,11 +42,30 @@ export default function HeroSection() {
               onClick={() => handleDownload}
             />
           </div>
+
+          <div className="relative max-w-[400px] h-[400px]">
+            <img
+              className="min-w-[400px] w-full h-full object-cover"
+              src="Lujza_Šufliarska_selfie.png"
+              alt="Lujza Šufliarska selfie"
+            />
+            {/* TODO adjust positions based on text */}
+            <div className="absolute top-4 -right-8">
+              <Banner
+                text={lookingForWork ? bannerPossitiveText : bannerNegativeText}
+              />
+            </div>
+          </div>
+
+          {/* 
           <img
             className="w-[400] h-[400]"
             src="Lujza_Šufliarska_selfie.png"
             alt="Lujza Šufliarska selfie"
           />
+          <Banner
+                text={lookingForWork ? bannerPossitiveText : bannerNegativeText}
+              /> */}
         </div>
         <Socials />
       </div>

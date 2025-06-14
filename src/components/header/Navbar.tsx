@@ -37,6 +37,7 @@ export default function Navbar() {
         Lujza Šufliarska
       </p>
 
+      {/* TODO preklady */}
       <div className="flex gap-5">
         <a onClick={() => handleScroll("home")} className="cursor-pointer">
           Home
