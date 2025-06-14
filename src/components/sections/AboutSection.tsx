@@ -5,13 +5,13 @@ import { useTheme } from "../../context/theme-context";
 import { useTranslation, Trans } from "react-i18next";
 
 export default function AboutSection() {
-  const { t } = useTranslation("about");
-  const { theme } = useTheme();
+  const { t } = useTranslation(["about", "navbar"]);
+  const { theme } = useTheme(); // condition for dark icons
 
   return (
     <div className="flex flex-col px-lg_screen items-center gap-5">
       <div className="flex flex-col gap-3 items-center">
-        <SectionHeader>{t("title1")}</SectionHeader>
+        <SectionHeader>{t("sections.about", { ns: "navbar" })}</SectionHeader>
 
         <div className="flex flex-col text-default text-[var(--bcg-text)] text-justify gap-2">
           {/* <p>
@@ -20,6 +20,7 @@ export default function AboutSection() {
               components={{ highlight: <TextHighlight /> }} // error
             />
           </p> */}
+
           <p>
             {t("text1")
               .split(/(<highlight>.*?<\/highlight>)/g)

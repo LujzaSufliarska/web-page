@@ -1,6 +1,6 @@
 {
-    "title": "Projekty",
-    "filters": "Všetky, Web, Mobil, Iné",
+    "section": "Projekty",
+    "filters": ["Všetky", "Web", "Mobil", "Iné"],
     "projects": {
         "project1": {
             "img": "/project1.png",
@@ -37,5 +37,6 @@
             "type": "Iné",
             "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5"
         }
-    }
+    },
+    "button": "Zobraziť Viac Projektov"
 }

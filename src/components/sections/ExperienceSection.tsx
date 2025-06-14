@@ -4,11 +4,15 @@ import SectionHeader from "../highlight/SectionHeader";
 import { useTranslation } from "react-i18next";
 
 export default function ExperienceSection() {
-  const { t } = useTranslation("experience");
+  const { t } = useTranslation(["experience", "navbar"]);
 
   return (
     <div className="flex flex-col px-lg_screen gap-3 items-center">
-      <SectionHeader>{t("title")}</SectionHeader>
+      {/* 1. title from navbar 2. title from coresponding json */}
+      <SectionHeader>
+        {/* {t("sections.experience", { ns: "navbar" })} */}
+        {t("section")}
+      </SectionHeader>
 
       <div className="flex flex-col gap-3 w-full">
         <PositionCard

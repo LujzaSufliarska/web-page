@@ -2,6 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
+import enNavbar from './locales/en/navbar.json';
 import enHome from './locales/en/home.json';
 import enAbout from './locales/en/about.json';
 import enExperience from './locales/en/experience.json';
@@ -10,6 +11,7 @@ import enProjects from './locales/en/projects.json';
 import enContact from './locales/en/contact.json';
 import enFooter from './locales/en/footer.json';
 
+import skNavbar from './locales/sk/navbar.json';
 import skHome from './locales/sk/home.json';
 import skAbout from './locales/sk/about.json';
 import skExperience from './locales/sk/experience.json';
@@ -24,6 +26,7 @@ i18n
   .init({
     resources: {
       en: {
+        navbar: enNavbar,
         home: enHome,
         about: enAbout,
         experience: enExperience,
@@ -33,6 +36,7 @@ i18n
         footer: enFooter
       },
       sk: {
+        navbar: skNavbar,
         home: skHome,
         about: skAbout,
         experience: skExperience,
@@ -43,7 +47,7 @@ i18n
       }
     },
     fallbackLng: "en",
-    ns: ['home', 'about', 'experience', 'testimonials', 'projects', 'contact', 'footer'], // namespaces for the translation files
+    ns: ['navbar', 'home', 'about', 'experience', 'testimonials', 'projects', 'contact', 'footer'], // namespaces for the translation files
     defaultNS: 'home',
     interpolation: {
       escapeValue: false

@@ -1,5 +1,5 @@
 {
-    "title": "Testimonials",
+    "section": "Testimonials",
     "testimonials": {
         "testimonial1": {
             "name": "John Doe",
@@ -16,6 +16,11 @@
             "name": "AAA Smith",
             "position": "AAAA Manager",
             "text": ",,AAAAAAAAAAAAAAAAAA”"
+        },
+        "testimonial4": {
+            "name": "AAA Smith AAAA",
+            "position": "AAAA Manager 2568",
+            "text": ",,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum.”"
         }
     }
 }

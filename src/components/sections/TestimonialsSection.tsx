@@ -4,30 +4,17 @@ import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import Testimonial from "../testimonial/Testimonial";
 import { AnimatePresence, motion } from "framer-motion";
-
-const testimonials = [
-  // Example testimonials data
-  {
-    name: "John Doe",
-    position: "Software Engineer",
-    text: ",,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum.”",
-    img: "/Lujza_Šufliarska_selfie.png",
-  },
-  {
-    name: "Jane Smith",
-    position: "Product Manager",
-    text: ",,Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum.”",
-  },
-  {
-    name: "AAA Smith",
-    position: "AAAA Manager",
-    text: ",,AAAAAAAAAAAAAAAAAA”",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function TestimonialsSection() {
+  const { t } = useTranslation(["testimonials", "navbar"]);
+
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
+
+  const testimonials = Object.values(
+    t("testimonials", { returnObjects: true })
+  );
 
   const length = testimonials.length;
 
@@ -43,7 +30,10 @@ export default function TestimonialsSection() {
 
   return (
     <div className="flex flex-col px-lg_screen gap-3 items-center">
-      <SectionHeader>Testimonials</SectionHeader>
+      <SectionHeader>
+        {/* {t("sections.testimonials", { ns: "navbar" })} */}
+        {t("section")}
+      </SectionHeader>
 
       {/* CAROUSEL */}
       <div className="flex flex-col gap-3 w-full items-center">

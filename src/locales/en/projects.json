@@ -1,6 +1,6 @@
 {
-    "title": "Projects",
-    "filters": "All, Web, Mobile, Other",
+    "section": "Projects",
+    "filters": ["All", "Web", "Mobile", "Other"],
     "projects": {
         "project1": {
             "img": "/project1.png",
@@ -37,5 +37,6 @@
             "type": "Other",
             "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5"
         }
-    }
+    },
+    "button": "View More Projects"
 }

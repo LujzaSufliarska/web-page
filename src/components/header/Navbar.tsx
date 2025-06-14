@@ -6,7 +6,18 @@ import { IoMoonOutline } from "react-icons/io5";
 import { IoSunnyOutline } from "react-icons/io5";
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation("navbar");
   const { theme, toggleTheme } = useTheme();
+
+  const sections = t("sections", { returnObjects: true }) as Record<
+    string,
+    string
+  >;
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "en" ? "sk" : "en";
+    i18n.changeLanguage(newLang);
+  };
 
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -24,39 +35,26 @@ export default function Navbar() {
     }
   };
 
-  const { t, i18n } = useTranslation();
-
-  const toggleLanguage = () => {
-    const newLang = i18n.language === "en" ? "sk" : "en";
-    i18n.changeLanguage(newLang);
-  };
-
   return (
     <nav className="fixed w-full h-[60px] top-0 left-0 px-lg_screen py-default bg-[var(--bcg)] opacity-95 text-[var(--bcg-text)] text-default drop-shadow-lg dark:drop-shadow-gray-800 gap-4 flex justify-between items-center z-[999]">
       <p className="text-h5 text-[var(--primary)] font-bold">
         Lujza Šufliarska
       </p>
 
-      {/* TODO preklady */}
       <div className="flex gap-5">
-        <a onClick={() => handleScroll("home")} className="cursor-pointer">
+        {/* is === section "header" in json (the first part with : ) */}
+        {Object.entries(sections).map(([id, label]) => (
+          <a
+            key={id}
+            onClick={() => handleScroll(id)}
+            className="cursor-pointer"
+          >
+            {label}
+          </a>
+        ))}
+        {/* <a onClick={() => handleScroll("home")} className="cursor-pointer">
           Home
-        </a>
-        <a onClick={() => handleScroll("about")} className="cursor-pointer">
-          About
-        </a>
-        <a
-          onClick={() => handleScroll("experience")}
-          className="cursor-pointer"
-        >
-          Experience
-        </a>
-        <a onClick={() => handleScroll("projects")} className="cursor-pointer">
-          Projects
-        </a>
-        <a onClick={() => handleScroll("contact")} className="cursor-pointer">
-          Contact
-        </a>
+        </a> */}
       </div>
       <div className="flex gap-2 items-center">
         <button className=" cursor-pointer" onClick={() => toggleLanguage()}>

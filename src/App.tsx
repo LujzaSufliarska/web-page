@@ -17,13 +17,11 @@ function App() {
     </BrowserRouter>
 
     // TODO add whether I'm open to work
-    // TODO language switch
-    // TODO fix project filter bar
-    // TODO implement project filter
     // TODO projects page?
     // TODO project description on hover
     // TODO Responsive
     // TODO accessibility pre nevydiacich?
+    // TODO fix testimonial card height nech s aprisposobuje textu
   );
 }
 

@@ -5,6 +5,7 @@ type Props = {
   img: string;
   name: string;
   description?: string;
+  type: string;
   skills: string;
 };
 
@@ -16,7 +17,7 @@ export default function ProjectCard(props: Props) {
       <div className="flex flex-col gap-2 p-default bg-[var(--primary)]">
         <div className="text-[var(--primary-text)]">
           <p className="text-p1 font-bold">{props.name}</p>
-          <p className="text-p2">{props.description}</p>
+          <p className="text-p2">{props.type}</p>
         </div>
 
         {/* SKILLS */}
