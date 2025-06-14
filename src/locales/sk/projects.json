@@ -3,9 +3,9 @@
     "filters": ["Všetky", "Web", "Mobil", "Iné"],
     "projects": {
         "project1": {
-            "img": "/project1.png",
+            "img": "/icons/axure.png",
             "name": "Projekt 1",
-            "description": "Toto je popis k projektu 1.",
+            "description": "Summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
             "type": "Web",
             "skills": "Skill 1, Skill 2, Skill 3, Skill 4"
         },

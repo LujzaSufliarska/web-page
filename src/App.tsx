@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import MainPage from "./views/MainPage";
 import "./i18n";
@@ -16,12 +15,10 @@ function App() {
       </Routes>
     </BrowserRouter>
 
-    // TODO add whether I'm open to work
-    // TODO projects page?
-    // TODO project description on hover
     // TODO Responsive
-    // TODO accessibility pre nevydiacich?
-    // TODO fix testimonial card height nech s aprisposobuje textu
+    // TODO accessibility pre nevidiacich?
+    // TODO fix testimonial card height nech sa prisposobuje textu
+    // TODO projects page?
   );
 }
 

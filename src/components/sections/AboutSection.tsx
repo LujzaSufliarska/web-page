@@ -46,7 +46,7 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full text-[var(--bcg-text)]">
           <div className="flex flex-col gap-1">
             <p className="font-bold text-h5">{t("header1")}</p>
-            <ul className="text-default">
+            <ul className="text-p1">
               <li>Python</li>
               <li>Java</li>
               <li>PostgreSQL</li>
@@ -59,7 +59,7 @@ export default function AboutSection() {
 
           <div className="flex flex-col gap-1">
             <p className="font-bold text-h5">{t("header2")}</p>
-            <ul className="text-default">
+            <ul className="text-p1">
               <li>Figma</li>
               <li>Axure</li>
               <li>Adobe Photoshop</li>
@@ -69,7 +69,7 @@ export default function AboutSection() {
 
           <div className="flex flex-col gap-1">
             <p className="font-bold text-h5">{t("header3")}</p>
-            <ul className="text-default">
+            <ul className="text-p1">
               <li>GitHub</li>
               <li>Git</li>
               <li>Jira</li>
@@ -78,7 +78,7 @@ export default function AboutSection() {
 
           <div className="flex flex-col gap-1">
             <p className="font-bold text-h5">{t("header4")}</p>
-            <ul className="text-default">
+            <ul className="text-p1">
               <li>Adobe PremierePro</li>
               <li>Microsoft Office</li>
               <li></li>
@@ -88,7 +88,6 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* TODO add icons */}
         <div className="flex flex-wrap px-wrapper py-default w-full justify-between gap-3">
           <img src="/icons/python.png" alt="Python icon" className="h-icon-m" />
           <img src="/icons/java.png" alt="Java icon" className="h-icon-m" />

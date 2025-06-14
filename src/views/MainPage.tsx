@@ -26,6 +26,8 @@ export default function mainPage() {
     string
   >;
 
+  const showTestimonial = false;
+
   return (
     <div className="flex flex-col gap-medium">
       {/* <section id="home">
@@ -41,7 +43,7 @@ export default function mainPage() {
           <section id={id}>{sectionComponents[id]}</section>
 
           {/* Insert TestimonialsSection right after the 'experience' section */}
-          {id === "experience" && (
+          {showTestimonial && id === "experience" && (
             <section id="testimonials">
               <TestimonialsSection />
             </section>
