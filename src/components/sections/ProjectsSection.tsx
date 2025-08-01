@@ -36,7 +36,7 @@ export default function ProjectsSection() {
   }, [i18n.language]);
 
   return (
-    <div className="flex flex-col px-lg_screen gap-5 items-center">
+    <div className="flex flex-col px-10 gap-5 items-center">
       <SectionHeader>{t("sections.projects", { ns: "navbar" })}</SectionHeader>
 
       {/* MENU */}

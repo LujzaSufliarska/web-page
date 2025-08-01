@@ -1,3 +1,6 @@
+import { s } from "framer-motion/client";
+const { BREAKPOINTS } = require('./src/config/breakpoints');
+
 export default {
   content: [
     "./index.html",
@@ -60,6 +63,8 @@ export default {
         wrapper: "24px",
         default: "16px",
         small: "8px",
+        sm_screen: "40px",
+        md_screen: "80px",
         lg_screen: "160px",
       },
 
@@ -87,12 +92,13 @@ export default {
       },
 
       // ---------------------------------------- B R E A K P O I N T S ----------------------------------------
+      // defined in src/config/breakpoints.ts
       screens: {
-        xs: "0px", // min width 0px
-        sm: "480px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
+        xs: `${BREAKPOINTS.xs}px`,
+        sm: `${BREAKPOINTS.sm}px`,
+        md: `${BREAKPOINTS.md}px`,
+        lg: `${BREAKPOINTS.lg}px`,
+        xl: `${BREAKPOINTS.xl}px`,
       },
     },
   },

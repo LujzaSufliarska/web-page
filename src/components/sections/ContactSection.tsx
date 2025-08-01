@@ -7,7 +7,7 @@ export default function ContactSection() {
   const { t } = useTranslation("contact");
 
   return (
-    <div className="flex flex-col px-lg_screen gap-5 items-center text-[var(--bcg-text)]">
+    <div className="flex flex-col px-lg_10screen gap-5 items-center text-[var(--bcg-text)]">
       <div className="flex flex-col gap-3 items-center">
         <p className="text-h4">{t("text")}</p>
 

@@ -7,7 +7,7 @@ export default function ExperienceSection() {
   const { t } = useTranslation(["experience", "navbar"]);
 
   return (
-    <div className="flex flex-col px-lg_screen gap-3 items-center">
+    <div className="flex flex-col px-10 gap-3 items-center">
       {/* 1. title from navbar 2. title from coresponding json */}
       <SectionHeader>
         {/* {t("sections.experience", { ns: "navbar" })} */}

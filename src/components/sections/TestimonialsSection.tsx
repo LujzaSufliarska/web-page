@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <div className="flex flex-col px-lg_screen gap-3 items-center">
+    <div className="flex flex-col px-10 gap-3 items-center">
       <SectionHeader>
         {/* {t("sections.testimonials", { ns: "navbar" })} */}
         {t("section")}

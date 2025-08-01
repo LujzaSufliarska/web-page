@@ -19,20 +19,17 @@ export default function HeroSection() {
   const handleDownload = () => {};
 
   return (
-    <div className="flex flex-col px-lg_screen py-[20px] mt-[60px] items-center gap-medium">
-      <div className="flex flex-col gap-medium items-end">
-        {/* Changed from items-center to items-end for alignment inak je to zbytocne mozno skusit fixnut len ked dam na mainPage center tak nizsie sekcie su uzke TODO*/}
-        <div className="flex lg:flex-row md:flex-col gap-5 lg:items-end md:items-center">
+    <div className="flex flex-col px-10 py-[20px] mt-[60px] items-center gap-medium">
+      <div className="flex flex-col gap-medium items-center lg:items-end">
+        <div className="flex flex-col lg:flex-row gap-5 items-center lg:items-end">
           {/* Hero text w/ button */}
           <div className="flex flex-col gap-3 items-start">
             <div className="flex flex-col gap-1">
               <p className="text-h3 text-[var(--bcg-text)]">{t("greeting")}</p>
 
-              <div className="flex gap-1">
-                <p className="text-h2 text-[var(--bcg-text)]">{t("who")}</p>
-                <p className="text-h2 text-[var(--primary)] font-bold">
-                  Lujza Šufliarska
-                </p>
+              <div className="flex flex-wrap gap-1 text-h2">
+                <p className="text-[var(--bcg-text)]">{t("who")}</p>
+                <p className="text-[var(--primary)] font-bold">{t("name")}</p>
               </div>
 
               <p className="text-default text-[var(--bcg-text)] text-justify">
@@ -47,7 +44,7 @@ export default function HeroSection() {
           </div>
 
           {/* Image w/ banner */}
-          <div className="relative w-full max-w-sm h-auto aspect-square">
+          <div className="relative w-full max-w-[400px] min-w-[100px] md:min-w-52 lg:max-w-[400px] h-auto aspect-square">
             <img
               className="w-full h-full object-cover"
               src="Lujza_Šufliarska_selfie.png"
