@@ -19,6 +19,17 @@
   --primary-text: #000000;
 }
 
+/* Responsive automatic font sizes -> design on large screen */
+.text-h1 {
+  @apply text-h3 sm:text-h3 md:text-h2 lg:text-h1;
+}
+.text-h2 {
+  @apply text-h4 sm:text-h4 md:text-h3 lg:text-h2;
+}
+.text-h3 {
+  @apply text-h5 sm:text-h5 md:text-h4 lg:text-h3;
+}
+
 html,
 body,
 #root,
