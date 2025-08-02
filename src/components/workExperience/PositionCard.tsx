@@ -12,9 +12,9 @@ export default function PositionCard(props: Props) {
   return (
     <div className="flex flex-col gap-1 w-full">
       {/* HEADER */}
-      <div className="flex px-wrapper py-default bg-[var(--primary)] text-[var(--primary-text)] font-bold rounded-small justify-between">
-        <p>{props.position}</p>
-        <p>{props.period}</p>
+      <div className="flex flex-col md:flex-row px-wrapper py-default bg-[var(--primary)] text-[var(--primary-text)] font-normal rounded-small justify-between">
+        <p className="font-bold">{props.position}</p>
+        <p className="md:font-bold">{props.period}</p>
       </div>
 
       {/* BODY */}
