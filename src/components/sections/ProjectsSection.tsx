@@ -5,6 +5,8 @@ import ProjectCard from "../project/ProjectCard";
 import SectionHeader from "../highlight/SectionHeader";
 import { useTranslation } from "react-i18next";
 
+import { FaFilter } from "react-icons/fa";
+
 export default function ProjectsSection() {
   const { t, i18n } = useTranslation(["projects", "navbar"]);
 
@@ -15,11 +17,14 @@ export default function ProjectsSection() {
 
   const allFilter = filters[0];
 
+  const [showFilter, setShowFilter] = useState(false);
   const [selectedFilter, setSelectedFilter] = useState(filters[0]);
 
   const handleFilter = (filterIndex: number) => {
     setSelectedFilter(filters[filterIndex]);
   };
+
+  const toggleFilterMenu = () => setShowFilter(!showFilter);
 
   const filteredProjects =
     selectedFilter === allFilter
@@ -39,8 +44,38 @@ export default function ProjectsSection() {
     <div className="flex flex-col px-10 gap-5 items-center">
       <SectionHeader>{t("sections.projects", { ns: "navbar" })}</SectionHeader>
 
-      {/* MENU */}
-      <ul className="flex w-2/5 justify-between px-wrapper border-solid border-b-2 border-[var(--primary)] text-[var(--bcg-text)]">
+      {/* MOBILE FILTER MENU */}
+      <div className="sm:hidden flex flex-col">
+        <div
+          className="flex gap-1 cursor-pointer text-[var(--primary)]"
+          onClick={() => setShowFilter(!showFilter)}
+        >
+          <FaFilter size={24} />
+          <p>{selectedFilter}</p>
+        </div>
+
+        {showFilter && (
+          <ul className="flex flex-col w-2/5 justify-between px-8 text-[var(--bcg-text)]">
+            {filters.map((filter, index) => (
+              <li
+                key={index}
+                className={`cursor-pointer pb-1 ${
+                  selectedFilter === filter ? "font-bold" : "opacity-50"
+                }`}
+                onClick={() => {
+                  handleFilter(index);
+                  toggleFilterMenu();
+                }}
+              >
+                {filter}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* DESKTOP FILTER MENU */}
+      <ul className="hidden sm:flex w-2/5 justify-between px-wrapper border-solid border-b-2 border-[var(--primary)] text-[var(--bcg-text)]">
         {filters.map((filter, index) => (
           <li
             key={index}

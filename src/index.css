@@ -29,6 +29,9 @@
 .text-h3 {
   @apply text-h5 md:text-h4 lg:text-h3;
 }
+.text-h4 {
+  @apply text-default md:text-h5 lg:text-h4;
+}
 
 /* Responsive images */
 .h-icon-l {

@@ -38,7 +38,7 @@ export default function PositionCard(props: Props) {
             show description ▼
           </button>
         ) : (
-          <div>
+          <>
             <button
               onClick={toggleExpanded}
               className="text-p1 text-[var(--primary)] w-fit cursor-pointer hover:underline"
@@ -51,7 +51,7 @@ export default function PositionCard(props: Props) {
                 <p>{text.trim()}</p>
               ))}
             </div>
-          </div>
+          </>
         )}
 
         {/* CHIPS */}

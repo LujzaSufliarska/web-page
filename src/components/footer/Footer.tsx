@@ -4,6 +4,8 @@ import { useTranslation } from "react-i18next";
 export default function Footer() {
   const { t } = useTranslation("footer");
 
+  const showOlderVersions = false;
+
   // TODO page with older versions of the website
   const handle = () => {};
 
@@ -12,14 +14,16 @@ export default function Footer() {
       <p>{t("text")}</p>
       <p>© Lujza Šufliarska 2025</p>
 
-      <div className="flex justify-end w-full ">
-        <button
-          className="text-p2 underline cursor-pointer"
-          onClick={() => handle}
-        >
-          {t("button")}
-        </button>
-      </div>
+      {showOlderVersions && (
+        <div className="flex justify-end w-full ">
+          <button
+            className="text-p2 underline cursor-pointer"
+            onClick={() => handle}
+          >
+            {t("button")}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
