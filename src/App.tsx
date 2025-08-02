@@ -16,7 +16,6 @@ function App() {
     </BrowserRouter>
 
     // TODO accessibility pre nevidiacich?
-    // TODO fix testimonial card height nech sa prisposobuje textu
     // TODO projects page?
   );
 }
