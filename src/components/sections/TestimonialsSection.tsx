@@ -38,6 +38,7 @@ export default function TestimonialsSection() {
       {/* CAROUSEL */}
       <div className="flex flex-col gap-3 w-full items-center">
         <div className="flex flex-row w-full justify-between items-center">
+          {/* Shrinking automatically not bcs of responsivnes set by me */}
           <IoIosArrowBack
             size={40}
             className="text-[var(--primary)] cursor-pointer"

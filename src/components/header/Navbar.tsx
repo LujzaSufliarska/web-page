@@ -80,12 +80,16 @@ export default function Navbar() {
       {/* DESKTOP */}
       <nav className="fixed w-full h-[60px] top-0 left-0 px-sm_screen md:px-md_screen lg:px-lg_screen py-default bg-[var(--bcg)] opacity-95 text-[var(--bcg-text)] text-default drop-shadow-lg dark:drop-shadow-gray-800 gap-4 flex justify-between items-center z-[999]">
         {/* Display Initials */}
-        <p className="sm:hidden flex text-h5 text-[var(--primary)] font-bold">
+        {/* <p className="sm:hidden flex text-h5 text-[var(--primary)] font-bold">
           {getInitials(t("name", { ns: "home" }))}
-        </p>
+        </p> */}
 
         {/* Display Whole Name */}
-        <p className="hidden sm:flex text-h5 text-[var(--primary)] font-bold">
+        {/* <p className="hidden sm:flex text-h5 text-[var(--primary)] font-bold">
+          {t("name", { ns: "home" })}
+        </p> */}
+
+        <p className="flex text-h5 text-[var(--primary)] font-bold">
           {t("name", { ns: "home" })}
         </p>
 
@@ -135,7 +139,7 @@ export default function Navbar() {
       {/* TODO menu opens only on top of the screen - i could also just delete useEffect which makes the page not scrollable */}
       {/* Full-screen Mobile SIDE MENU */}
       {showMenu && (
-        <div className="w-full h-full top-0 left-0 px-lg_screen py-big bg-[var(--bcg)] text-[var(--bcg-text)] text-default flex flex-col gap-3">
+        <div className="w-full h-full top-0 left-0 px-sm_screen md:px-md_screen lg:px-lg_screen py-big bg-[var(--bcg)] text-[var(--bcg-text)] text-default flex flex-col gap-3">
           <div className="flex flex-col gap-1">
             {/* is === section "header" in json (the first part with : ) */}
             {Object.entries(sections).map(([id, label]) => (

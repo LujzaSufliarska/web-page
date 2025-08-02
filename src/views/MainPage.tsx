@@ -26,6 +26,7 @@ export default function mainPage() {
     string
   >;
 
+  // TODO to show testimonials set condition to true
   const showTestimonial = false;
 
   return (

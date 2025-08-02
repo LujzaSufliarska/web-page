@@ -8,7 +8,7 @@ export default function ContactSection() {
 
   return (
     <div className="flex flex-col px-lg_10screen gap-5 items-center text-[var(--bcg-text)]">
-      <div className="flex flex-col gap-3 items-center">
+      <div className="flex flex-col gap-3 items-center text-center">
         <p className="text-h4">{t("text")}</p>
 
         {/* TODO copy email by click */}
