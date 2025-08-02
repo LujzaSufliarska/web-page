@@ -5,7 +5,7 @@ import "./i18n";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Web-Portfolio">
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />
