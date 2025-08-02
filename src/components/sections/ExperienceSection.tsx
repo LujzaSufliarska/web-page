@@ -27,6 +27,7 @@ export default function ExperienceSection() {
               {t("positions.mbank1.company_type")}
             </>
           }
+          description={t("positions.mbank1.description")}
           attributes={t("positions.mbank1.attributes")}
         />
 
@@ -42,6 +43,7 @@ export default function ExperienceSection() {
               {t("positions.mbank2.company_type")}
             </>
           }
+          description={t("positions.mbank2.description")}
           attributes={t("positions.mbank2.attributes")}
         />
       </div>

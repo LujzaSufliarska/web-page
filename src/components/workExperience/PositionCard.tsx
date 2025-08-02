@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Chip from "../chips/Chip";
 
 type Props = {
   position: string;
   period: string;
   company: React.ReactNode;
+  description: string;
   attributes: string; // Comma-separated list of attributes
 };
 
 export default function PositionCard(props: Props) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const toggleExpanded = () => setIsExpanded(!isExpanded);
+
   return (
     <div className="flex flex-col gap-1 w-full">
       {/* HEADER */}
@@ -25,6 +29,30 @@ export default function PositionCard(props: Props) {
         >
           {props.company}
         </p>
+
+        {!isExpanded ? (
+          <button
+            onClick={toggleExpanded}
+            className="text-p1 text-[var(--primary)] w-fit cursor-pointer hover:underline"
+          >
+            show description ▼
+          </button>
+        ) : (
+          <div>
+            <button
+              onClick={toggleExpanded}
+              className="text-p1 text-[var(--primary)] w-fit cursor-pointer hover:underline"
+            >
+              show less ▲
+            </button>
+
+            <div className="flex flex-col text-p3">
+              {props.description.split("\n").map((text) => (
+                <p>{text.trim()}</p>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* CHIPS */}
         <div className="flex flex-wrap gap-default">

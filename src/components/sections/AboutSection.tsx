@@ -42,8 +42,7 @@ export default function AboutSection() {
       <div className="flex flex-col gap-3 items-center w-full">
         <SectionHeader>{t("title2")}</SectionHeader>
 
-{/* TODO tie allignmenty responzivne sa mi nepacia... */}
-        {/* TODO default pre prehliadac je p ako 16 px */}
+        {/* TODO tie allignmenty responzivne sa mi nepacia... */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full text-[var(--bcg-text)] xs:justify-items-center sm:justify-items-stretch xs:text-center sm:text-left">
           <div className="flex flex-col gap-1">
             <p className="font-bold text-h5">{t("header1")}</p>
