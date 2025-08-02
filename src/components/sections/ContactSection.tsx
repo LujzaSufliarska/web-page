@@ -1,4 +1,3 @@
-import React from "react";
 import ScrollToTop from "../scrollToTop/ScrollToTop";
 import Socials from "../iconElements/Socials";
 import { useTranslation } from "react-i18next";

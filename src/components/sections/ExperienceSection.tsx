@@ -1,4 +1,3 @@
-import React from "react";
 import PositionCard from "../workExperience/PositionCard";
 import SectionHeader from "../highlight/SectionHeader";
 import { useTranslation } from "react-i18next";

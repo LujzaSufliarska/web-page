@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Chip from "../chips/Chip";
 
 type Props = {

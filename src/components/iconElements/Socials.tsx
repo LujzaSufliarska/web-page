@@ -1,4 +1,3 @@
-import React from "react";
 import ClickableImage from "./ClickableImg";
 import { useTheme } from "../../context/theme-context";
 

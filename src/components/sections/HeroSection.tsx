@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "../button/Button";
 import { GoDownload } from "react-icons/go";
 import Socials from "../iconElements/Socials";

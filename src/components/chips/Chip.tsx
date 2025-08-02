@@ -1,5 +1,3 @@
-import React from "react";
-
 type ButtonVariant = "job" | "project";
 
 type Props = {
