@@ -9,7 +9,7 @@ export default function Footer() {
   const handle = () => {};
 
   return (
-    <div className="flex flex-col gap-3 bg-[var(--primary)] py-wrapper px-lg_screen text-[var(--primary-text)] text-1 text-center items-center">
+    <div className="flex flex-col gap-3 bg-[var(--primary)] py-wrapper px-5 text-[var(--primary-text)] text-1 text-center items-center">
       <p>{t("text")}</p>
       <p>© Lujza Šufliarska 2025</p>
 

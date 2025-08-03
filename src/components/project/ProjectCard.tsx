@@ -11,10 +11,11 @@ type Props = {
 
 export default function ProjectCard(props: Props) {
   const [hovered, setHovered] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
 
   return (
     <div
-      className="flex flex-col w-full"
+      className="flex flex-col w-full group"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -31,11 +32,31 @@ export default function ProjectCard(props: Props) {
           <p className="text-p2">{props.type}</p>
         </div>
 
+        {/* Button only on small screens */}
+        {props.description && (
+          <button
+            onClick={() => setShowDescription(!showDescription)}
+            className="text-p2 text-[var(--primary-text)] underline md:hidden w-fit"
+            aria-expanded={showDescription}
+            aria-controls="description"
+          >
+            {showDescription ? "Hide description ▲" : "Show description ▼"}
+          </button>
+        )}
+
         {/* Description that rolls out */}
         <div
-          className={`overflow-hidden transition-all duration-300 ease-in-out text-p2 text-[var(--primary-text)] ${
-            hovered ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
-          }`}
+          // className={`overflow-hidden transition-all duration-300 ease-in-out text-p2 text-[var(--primary-text)] ${
+          //   hovered ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+          // }`}
+
+          className={`overflow-hidden transition-all duration-300 ease-in-out text-p2 text-[var(--primary-text)] 
+            ${
+              // Small screens: controlled by showDescription
+              showDescription ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+            } 
+            md:max-h-0 md:opacity-0 
+            group-hover:md:max-h-40 group-hover:md:opacity-100`}
           style={{ whiteSpace: "normal" }}
         >
           {props.description}
