@@ -64,7 +64,7 @@ export default {
         wrapper: "24px",
         default: "16px",
         small: "8px",
-        sm_screen: "40px",
+        sm_screen: "20px",
         md_screen: "80px",
         lg_screen: "160px",
       },

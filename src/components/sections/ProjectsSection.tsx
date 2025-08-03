@@ -41,7 +41,7 @@ export default function ProjectsSection() {
   }, [i18n.language]);
 
   return (
-    <div className="flex flex-col px-10 gap-5 items-center">
+    <div className="flex flex-col px-5 gap-5 items-center">
       <SectionHeader>{t("sections.projects", { ns: "navbar" })}</SectionHeader>
 
       {/* MOBILE FILTER MENU */}

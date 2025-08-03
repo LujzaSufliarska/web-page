@@ -4,38 +4,10 @@
     "projects": {
         "project1": {
             "img": "./icons/axure.png",
-            "name": "Project 1",
-            "description": "Summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+            "name": "Personal Web Page",
+            "description": "A personal website designed as a digital CV and portfolio. The site provides a clear overview of my background and competencies. Built with a responsive layout to ensure easy navigation across devices.",
             "type": "Web",
-            "skills": "Skill 1, Skill 2, Skill 3, Skill 4"
-        },
-        "project2": {
-            "img": "",
-            "name": "Project 2",
-            "description": "This is a description of Project 2.",
-            "type": "Mobile",
-            "skills": "Skill 1, Skill 2, Skill 3"
-        },
-        "project3": {
-            "img": "",
-            "name": "Project 3",
-            "description": "This is a description of Project 3.",
-            "type": "Other",
-            "skills": "Skill 1, Skill 2"
-        },
-        "project4": {
-            "img": "./icons/axure.png",
-            "name": "Project 4",
-            "description": "Summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
-            "type": "Other",
-            "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5, Skill 6"
-        },
-        "project5": {
-            "img": "",
-            "name": "Project 5",
-            "description": "This is a description of Project 5.",
-            "type": "Other",
-            "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5"
+            "skills": "React, Typescript, Tailwind CSS, Vite"
         }
     },
     "button": "View More Projects"

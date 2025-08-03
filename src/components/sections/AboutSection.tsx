@@ -9,7 +9,7 @@ export default function AboutSection() {
   const { theme } = useTheme(); // condition for dark icons
 
   return (
-    <div className="flex flex-col px-10 items-center gap-5">
+    <div className="flex flex-col px-5 items-center gap-5">
       <div className="flex flex-col gap-3 items-center">
         <SectionHeader>{t("sections.about", { ns: "navbar" })}</SectionHeader>
 

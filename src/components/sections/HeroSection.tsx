@@ -18,7 +18,7 @@ export default function HeroSection() {
   const handleDownload = () => {};
 
   return (
-    <div className="flex flex-col px-10 py-[20px] mt-[60px] items-center gap-medium">
+    <div className="flex flex-col px-5 py-[20px] mt-[60px] items-center gap-medium">
       <div className="flex flex-col gap-medium items-center lg:items-end">
         <div className="flex flex-col lg:flex-row gap-5 items-center lg:items-end">
           {/* Image w/ banner */}

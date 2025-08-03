@@ -4,38 +4,10 @@
     "projects": {
         "project1": {
             "img": "./icons/axure.png",
-            "name": "Projekt 1",
-            "description": "Summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+            "name": "Osobá Web Stránka",
+            "description": "Osobná webová stránka navrhnutá ako digitálny životopis a portfólio. Stránka poskytuje prehľad mojich pracovných skúseností a zručností. Vytvorená s responzívnym dizajnom, ktorý zabezpečuje jednoduchú navigáciu na rôznych zariadeniach.",
             "type": "Web",
-            "skills": "Skill 1, Skill 2, Skill 3, Skill 4"
-        },
-        "project2": {
-            "img": "",
-            "name": "Projekt 2",
-            "description": "Toto je popis k projektu 2.",
-            "type": "Mobil",
-            "skills": "Skill 1, Skill 2, Skill 3"
-        },
-        "project3": {
-            "img": "",
-            "name": "Project Three",
-            "description": "This is a description of Project 3.",
-            "type": "Iné",
-            "skills": "Skill 1, Skill 2"
-        },
-        "project4": {
-            "img": "",
-            "name": "Projekt 4",
-            "description": "Toto je popis k projektu 4.",
-            "type": "Iné",
-            "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5, Skill 6"
-        },
-        "project5": {
-            "img": "",
-            "name": "Projekt 5",
-            "description": "Toto je popis k projektu 5.",
-            "type": "Iné",
-            "skills": "Skill 1, Skill 2, Skill 3, Skill 4, Skill 5"
+            "skills": "React, Typescript, Tailwind CSS, Vite"
         }
     },
     "button": "Zobraziť Viac Projektov"
