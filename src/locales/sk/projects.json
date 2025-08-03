@@ -3,11 +3,11 @@
     "filters": ["Všetky", "Web", "Mobil", "Iné"],
     "projects": {
         "project1": {
-            "img": "./icons/axure.png",
+            "img": "./projects/WebPage.png",
             "name": "Osobá Web Stránka",
             "description": "Osobná webová stránka navrhnutá ako digitálny životopis a portfólio. Stránka poskytuje prehľad mojich pracovných skúseností a zručností. Vytvorená s responzívnym dizajnom, ktorý zabezpečuje jednoduchú navigáciu na rôznych zariadeniach.",
             "type": "Web",
-            "skills": "React, Typescript, Tailwind CSS, Vite"
+            "skills": "React, Typescript, Tailwind CSS, Vite, Responzivita"
         }
     },
     "button": "Zobraziť Viac Projektov"

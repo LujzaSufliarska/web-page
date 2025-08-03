@@ -19,6 +19,7 @@ function App() {
 
     // TODO accessibility pre nevidiacich?
     // TODO projects page?
+    // TODO na hero stranke zmenit na px-5 ako vsade ale ptm treba upravit poziciu banera. nevedela som jak na to tak som tam nechala px-10
   );
 }
 

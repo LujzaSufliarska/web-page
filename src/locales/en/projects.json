@@ -3,11 +3,11 @@
     "filters": ["All", "Web", "Mobile", "Other"],
     "projects": {
         "project1": {
-            "img": "./icons/axure.png",
+            "img": "./projects/WebPage.png",
             "name": "Personal Web Page",
             "description": "A personal website designed as a digital CV and portfolio. The site provides a clear overview of my background and competencies. Built with a responsive layout to ensure easy navigation across devices.",
             "type": "Web",
-            "skills": "React, Typescript, Tailwind CSS, Vite"
+            "skills": "React, Typescript, Tailwind CSS, Vite, Responsive"
         }
     },
     "button": "View More Projects"

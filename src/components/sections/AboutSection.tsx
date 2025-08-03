@@ -83,7 +83,7 @@ export default function AboutSection() {
               <li>Microsoft Office</li>
               <li>Oracle SQL Developer</li>
               <li>SQL Server Management Studio</li>
-              <li>Power BI</li> {/* TODO add icon */}
+              <li>Power BI</li>
             </ul>
           </div>
         </div>
@@ -146,6 +146,7 @@ export default function AboutSection() {
             alt="Microsoft Office icon"
             className="h-icon-m"
           />
+          <img src="./icons/pbi.png" alt="Power BI icon" className="h-icon-m" />
         </div>
       </div>
     </div>
