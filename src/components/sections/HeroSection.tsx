@@ -6,16 +6,18 @@ import Banner from "../banner/Banner";
 
 export default function HeroSection() {
   const { t } = useTranslation("home");
+  const { t: tOther } = useTranslation("other");
 
-  // const bannerPossitiveText = t("Open to work! Contact me!");
-  const bannerPossitiveText = t("Looking for new opportunities! Contact me!");
-
-  const bannerNegativeText = t(
-    "Not looking for a job at the moment. But feel free to contact me!"
-  );
   const lookingForWork = false;
 
-  const handleDownload = () => {};
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "CV_Lujza_Šufliarska_2025.pdf";
+    link.download = "CV_Lujza_Šufliarska_2025.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="flex flex-col px-10 py-[20px] mt-[60px] items-center gap-medium">
@@ -35,10 +37,15 @@ export default function HeroSection() {
               }]`}
             >
               <Banner
-                text={lookingForWork ? bannerPossitiveText : bannerNegativeText}
+                text={
+                  lookingForWork
+                    ? tOther("banner.positiveText")
+                    : tOther("banner.negativeText")
+                }
               />
             </div>
           </div>
+
           {/* Hero text w/ button */}
           <div className="flex flex-col lg:order-1 gap-3 items-start">
             <div className="flex flex-col gap-1">
@@ -53,11 +60,19 @@ export default function HeroSection() {
                 {t("text")}
               </p>
             </div>
-            <Button
-              label={t("button")}
-              icon={<GoDownload />}
-              onClick={() => handleDownload}
-            />
+
+            <a
+              href="CV_Lujza_Šufliarska_2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                label={t("button")}
+                icon={<GoDownload />}
+                onClick={() => {}}
+                // onClick={handleDownload}
+              />
+            </a>
           </div>
         </div>
         <Socials />

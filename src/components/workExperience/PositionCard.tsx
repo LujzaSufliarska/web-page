@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Chip from "../chips/Chip";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   position: string;
@@ -10,6 +11,8 @@ type Props = {
 };
 
 export default function PositionCard(props: Props) {
+  const { t } = useTranslation("other");
+
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleExpanded = () => setIsExpanded(!isExpanded);
 
@@ -35,7 +38,7 @@ export default function PositionCard(props: Props) {
             onClick={toggleExpanded}
             className="text-p1 text-[var(--primary)] w-fit cursor-pointer hover:underline"
           >
-            show description ▼
+            {t("showDescription")}
           </button>
         ) : (
           <>
@@ -43,7 +46,7 @@ export default function PositionCard(props: Props) {
               onClick={toggleExpanded}
               className="text-p1 text-[var(--primary)] w-fit cursor-pointer hover:underline"
             >
-              show less ▲
+              {t("hideDescription")}
             </button>
 
             <div className="flex flex-col text-p3">

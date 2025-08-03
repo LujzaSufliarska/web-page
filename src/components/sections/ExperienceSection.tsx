@@ -15,6 +15,7 @@ export default function ExperienceSection() {
 
       <div className="flex flex-col gap-3 w-full">
         <PositionCard
+          key={1}
           position={t("positions.mbank1.position")}
           period={t("positions.mbank1.period")}
           company={
@@ -31,6 +32,7 @@ export default function ExperienceSection() {
         />
 
         <PositionCard
+          key={2}
           position={t("positions.mbank2.position")}
           period={t("positions.mbank2.period")}
           company={

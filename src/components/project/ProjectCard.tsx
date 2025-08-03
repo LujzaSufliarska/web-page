@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Chip from "../chips/Chip";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   img: string;
@@ -10,6 +11,8 @@ type Props = {
 };
 
 export default function ProjectCard(props: Props) {
+  const { t } = useTranslation("other");
+
   const [hovered, setHovered] = useState(false);
   const [showDescription, setShowDescription] = useState(false);
 
@@ -40,7 +43,7 @@ export default function ProjectCard(props: Props) {
             aria-expanded={showDescription}
             aria-controls="description"
           >
-            {showDescription ? "Hide description ▲" : "Show description ▼"}
+            {showDescription ? t("hideDescription") : t("showDescription")}
           </button>
         )}
 
