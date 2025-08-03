@@ -89,7 +89,11 @@ export default function AboutSection() {
         </div>
 
         <div className="flex flex-wrap px-wrapper py-default w-full justify-evenly gap-3">
-          <img src="/icons/python.png" alt="Python icon" className="h-icon-m" />
+          <img
+            src="./icons/python.png"
+            alt="Python icon"
+            className="h-icon-m"
+          />
           <img src="/icons/java.png" alt="Java icon" className="h-icon-m" />
           <img
             src="/icons/postgresql.png"
