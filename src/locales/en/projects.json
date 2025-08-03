@@ -3,7 +3,7 @@
     "filters": ["All", "Web", "Mobile", "Other"],
     "projects": {
         "project1": {
-            "img": "/icons/axure.png",
+            "img": "@icons/axure.png",
             "name": "Project 1",
             "description": "Summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
             "type": "Web",
@@ -24,7 +24,7 @@
             "skills": "Skill 1, Skill 2"
         },
         "project4": {
-            "img": "/icons/axure.png",
+            "img": "@icons/axure.png",
             "name": "Project 4",
             "description": "Summary Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec fringilla mauris. Mauris id ligula a eros maximus porttitor ac ut magna. Morbi aliquam pulvinar turpis. Nulla placerat fermentum elit eget bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
             "type": "Other",

@@ -9,4 +9,10 @@ export default defineConfig(({ mode }) => ({
     tailwindcss()
   ],
   base: mode === 'production' ? '/Web-Portfolio' : '/',
+  resolve: {
+    alias: {
+      // '@': '/src',
+      '@icons': '/icons', // This works for public/icons
+    },
+  },
 }))
