@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       // '@': '/src',
-      '@icons': '/icons', // This works for public/icons
+      '@icons': './icons', // This works for public/icons
     },
   },
 }))
