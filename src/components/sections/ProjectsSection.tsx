@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 import Button from "../button/Button";
-import { FaArrowRightLong } from "react-icons/fa6";
 import ProjectCard from "../project/ProjectCard";
 import SectionHeader from "../highlight/SectionHeader";
-import { useTranslation } from "react-i18next";
 
+import { FaArrowRightLong } from "react-icons/fa6";
 import { FaFilter } from "react-icons/fa";
 
 export default function ProjectsSection() {
   const { t, i18n } = useTranslation(["projects", "navbar"]);
+  const navigate = useNavigate();
 
   const maxProjects = 9;
 
@@ -32,8 +34,6 @@ export default function ProjectsSection() {
       : allProjects
           .slice(0, maxProjects)
           .filter((project) => project.type === selectedFilter);
-
-  const handle = () => {};
 
   // TODO i could fix that on refresh all filter is always selected
   useEffect(() => {
@@ -109,7 +109,7 @@ export default function ProjectsSection() {
       <Button
         label={t("button")}
         icon={<FaArrowRightLong />}
-        onClick={() => handle}
+        onClick={() => navigate("/projects")}
       />
     </div>
   );

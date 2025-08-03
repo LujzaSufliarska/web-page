@@ -9,10 +9,13 @@ import { IoIosMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 
 import { BREAKPOINTS } from "../../config/breakpoints";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const { t, i18n } = useTranslation(["navbar", "home"]);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -34,19 +37,23 @@ export default function Navbar() {
     localStorage.setItem("appLanguage", newLang);
   };
 
-  const handleScroll = (id: string) => {
+  const handleLinkClick = (id: string) => {
     const element = document.getElementById(id);
 
-    if (element) {
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
-      const offset = 70;
+    if (location.pathname !== "/") {
+      navigate(`/#${element}`);
+    } else {
+      if (element) {
+        const elementPosition =
+          element.getBoundingClientRect().top + window.pageYOffset;
+        const offset = 70;
 
-      // element.scrollIntoView({ behavior: "smooth" });
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: "smooth",
-      });
+        // element.scrollIntoView({ behavior: "smooth" });
+        window.scrollTo({
+          top: elementPosition - offset,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -90,20 +97,27 @@ export default function Navbar() {
           {t("name", { ns: "home" })}
         </p> */}
 
-        <p className="flex text-h5 text-[var(--primary)] font-bold">
+        <p
+          className="flex text-h5 text-[var(--primary)] font-bold cursor-pointer"
+          onClick={() => {
+            navigate("/");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           {t("name", { ns: "home" })}
         </p>
 
         <div className="hidden md:flex gap-5">
           {/* is === section "header" in json (the first part with : ) */}
           {Object.entries(sections).map(([id, label]) => (
-            <a
+            <Link
               key={id}
-              onClick={() => handleScroll(id)}
+              to={`/#${id}`}
+              onClick={() => handleLinkClick(id)}
               className="cursor-pointer"
             >
               {label}
-            </a>
+            </Link>
           ))}
           {/* <a onClick={() => handleScroll("home")} className="cursor-pointer">
                   Home
@@ -148,7 +162,7 @@ export default function Navbar() {
                 key={id}
                 onClick={() => {
                   setShowMenu(false);
-                  handleScroll(id);
+                  handleLinkClick(id);
                 }}
                 className="cursor-pointer"
               >
