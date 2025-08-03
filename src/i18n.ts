@@ -46,9 +46,12 @@ i18n
         footer: skFooter
       }
     },
-    fallbackLng: "en",
+
+    lng: 'en', // DEFAULT LANGUAGE
+    fallbackLng: "en", // Fallback if selected language is missing
     ns: ['navbar', 'home', 'about', 'experience', 'testimonials', 'projects', 'contact', 'footer'], // namespaces for the translation files
     defaultNS: 'home',
+    
     interpolation: {
       escapeValue: false
     }

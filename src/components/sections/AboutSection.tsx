@@ -89,56 +89,60 @@ export default function AboutSection() {
         </div>
 
         <div className="flex flex-wrap px-wrapper py-default w-full justify-evenly gap-3">
-          <img src="@icons/python.png" alt="Python icon" className="h-icon-m" />
-          <img src="@icons/java.png" alt="Java icon" className="h-icon-m" />
           <img
-            src="@icons/postgresql.png"
+            src="./icons/python.png"
+            alt="Python icon"
+            className="h-icon-m"
+          />
+          <img src="./icons/java.png" alt="Java icon" className="h-icon-m" />
+          <img
+            src="./icons/postgresql.png"
             alt="PostgreSQL icon"
             className="h-icon-m"
           />
-          <img src="@icons/html.png" alt="HTML icon" className="h-icon-m" />
-          <img src="@icons/css.png" alt="CSS icon" className="h-icon-m" />
+          <img src="./icons/html.png" alt="HTML icon" className="h-icon-m" />
+          <img src="./icons/css.png" alt="CSS icon" className="h-icon-m" />
 
-          <img src="@icons/figma.png" alt="Figma icon" className="h-icon-m" />
+          <img src="./icons/figma.png" alt="Figma icon" className="h-icon-m" />
           <img
-            src="@icons/axure.png"
+            src="./icons/axure.png"
             alt="Axure RP icon"
             className="h-icon-m"
           />
           <img
-            src="@icons/photoshop.png"
+            src="./icons/photoshop.png"
             alt="Adobe Photoshop icon"
             className="h-icon-m"
           />
           <img
-            src="@icons/illustrator.png"
+            src="./icons/illustrator.png"
             alt="Adobe Illustrator icon"
             className="h-icon-m"
           />
 
           {theme === "light" ? (
             <img
-              src="@icons/github-light.png"
+              src="./icons/github-light.png"
               alt="GitHub icon"
               className="h-icon-m"
             />
           ) : (
             <img
-              src="@icons/github-dark.png"
+              src="./icons/github-dark.png"
               alt="GitHub icon"
               className="h-icon-m"
             />
           )}
-          <img src="@icons/git.png" alt="Git icon" className="h-icon-m" />
-          <img src="@icons/jira.png" alt="Jira icon" className="h-icon-m" />
+          <img src="./icons/git.png" alt="Git icon" className="h-icon-m" />
+          <img src="./icons/jira.png" alt="Jira icon" className="h-icon-m" />
 
           <img
-            src="@icons/premiere_pro.png"
+            src="./icons/premiere_pro.png"
             alt="Adobe Premiere Pro icon"
             className="h-icon-m"
           />
           <img
-            src="@icons/microsoft_office.png"
+            src="./icons/microsoft_office.png"
             alt="Microsoft Office icon"
             className="h-icon-m"
           />
