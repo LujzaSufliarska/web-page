@@ -31,6 +31,7 @@ export default function Navbar() {
   const toggleLanguage = () => {
     const newLang = i18n.language === "en" ? "sk" : "en";
     i18n.changeLanguage(newLang);
+    localStorage.setItem("appLanguage", newLang);
   };
 
   const handleScroll = (id: string) => {

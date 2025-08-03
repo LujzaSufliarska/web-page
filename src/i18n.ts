@@ -20,6 +20,8 @@ import skProjects from './locales/sk/projects.json';
 import skContact from './locales/sk/contact.json';
 import skFooter from './locales/sk/footer.json';
 
+const savedLanguage = localStorage.getItem('appLanguage') || 'sk';
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -47,7 +49,7 @@ i18n
       }
     },
 
-    lng: 'en', // DEFAULT LANGUAGE
+    lng: savedLanguage, // DEFAULT LANGUAGE - after F5 changes to this -> local storage used
     fallbackLng: "en", // Fallback if selected language is missing
     ns: ['navbar', 'home', 'about', 'experience', 'testimonials', 'projects', 'contact', 'footer'], // namespaces for the translation files
     defaultNS: 'home',
