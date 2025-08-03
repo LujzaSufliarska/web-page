@@ -6,8 +6,17 @@
             "img": "./projects/WebPage.png",
             "name": "Personal Web Page",
             "description": "A personal website designed as a digital CV and portfolio. The site provides a clear overview of my background and competencies. Built with a responsive layout to ensure easy navigation across devices.",
+            "year": "2025",
             "type": "Web",
             "skills": "React, Typescript, Tailwind CSS, Vite, Responsive"
+        },
+        "project2": {
+            "img": "./projects/BachelorThesis.png",
+            "name": "Prototyping user interface for AI application",
+            "description": "My bachelor thesis project - UI prototype in Axure RP with simulation of multiple useful AI applications in medical domain. Implementation was tested with real users.\n\nPrototype: https://oxl0az.axshare.com/?id=xmgk1t&p=1_-_main",
+            "year": "2024",
+            "type": "Web",
+            "skills": "Prototype, Axure RP, Testing, WOZ, Bachelor Thesis"
         }
     },
     "button": "View More Projects"

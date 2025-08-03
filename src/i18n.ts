@@ -22,7 +22,7 @@ import skContact from './locales/sk/contact.json';
 import skFooter from './locales/sk/footer.json';
 import skOther from './locales/sk/other.json';
 
-const savedLanguage = localStorage.getItem('appLanguage') || 'sk';
+const savedLanguage = localStorage.getItem('appLanguage') || 'en';
 
 i18n
   .use(LanguageDetector)

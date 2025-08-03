@@ -49,10 +49,8 @@ export default function PositionCard(props: Props) {
               {t("hideDescription")}
             </button>
 
-            <div className="flex flex-col text-p3">
-              {props.description.split("\n").map((text) => (
-                <p>{text.trim()}</p>
-              ))}
+            <div className="flex flex-col text-p3 whitespace-pre-line">
+              <p>{props.description}</p>
             </div>
           </>
         )}

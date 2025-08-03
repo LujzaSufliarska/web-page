@@ -53,6 +53,7 @@ export default function AboutSection() {
               <li>HTML</li>
               <li>CSS</li>
               <li>Tailwind</li>
+              <li>Unity</li>
               {/* <li>TypeScript</li> */}
             </ul>
           </div>

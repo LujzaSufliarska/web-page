@@ -6,6 +6,7 @@ type Props = {
   img: string;
   name: string;
   description?: string;
+  year: string;
   type: string;
   skills: string;
 };
@@ -23,15 +24,18 @@ export default function ProjectCard(props: Props) {
       onMouseLeave={() => setHovered(false)}
     >
       {/* Image */}
-      <img
-        src={props.img}
-        className="h-full max-h-[200px] w-auto object-contain"
-      />
+      <div className="flex justify-center">
+        <img
+          src={props.img}
+          className="h-full max-h-[200px] w-auto object-contain"
+        />
+      </div>
 
-      {/* Intro text */}
+      {/* Content */}
       <div className="flex flex-col gap-2 p-default bg-[var(--primary)]">
         <div className="text-[var(--primary-text)]">
           <p className="text-p1 font-bold">{props.name}</p>
+          <p className="text-p2">{props.year}</p>
           <p className="text-p2">{props.type}</p>
         </div>
 
@@ -60,7 +64,7 @@ export default function ProjectCard(props: Props) {
             } 
             md:max-h-0 md:opacity-0 
             group-hover:md:max-h-40 group-hover:md:opacity-100`}
-          style={{ whiteSpace: "normal" }}
+          style={{ whiteSpace: "pre-line" }}
         >
           {props.description}
         </div>

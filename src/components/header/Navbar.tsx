@@ -41,19 +41,32 @@ export default function Navbar() {
     const element = document.getElementById(id);
 
     if (location.pathname !== "/") {
-      navigate(`/#${element}`);
-    } else {
-      if (element) {
-        const elementPosition =
-          element.getBoundingClientRect().top + window.pageYOffset;
-        const offset = 70;
+      navigate(`/#${id}`);
+      // Wait a bit for the DOM to render before scrolling - element can be set to null now
+      setTimeout(() => {
+        const element = document.getElementById(id);
 
-        // element.scrollIntoView({ behavior: "smooth" });
-        window.scrollTo({
-          top: elementPosition - offset,
-          behavior: "smooth",
-        });
-      }
+        if (element) {
+          const elementPosition =
+            element.getBoundingClientRect().top + window.pageYOffset;
+          const offset = 70;
+
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    } else if (element) {
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offset = 70;
+
+      // element.scrollIntoView({ behavior: "smooth" });
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
     }
   };
 

@@ -19,8 +19,8 @@ function App() {
     </BrowserRouter>
 
     // TODO accessibility pre nevidiacich?
-    // TODO projects page
-    //TODO experience page
+    // TODO projects page - filtrovanie podľa roku?
+    // TODO experience page
     // TODO na hero stranke zmenit na px-5 ako vsade ale ptm treba upravit poziciu banera. nevedela som jak na to tak som tam nechala px-10
   );
 }
