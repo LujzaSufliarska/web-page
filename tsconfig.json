@@ -7,7 +7,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@icons/*": ["public/icons/*"]
+      // "@/*": ["src/*"],
     }
   }
 }

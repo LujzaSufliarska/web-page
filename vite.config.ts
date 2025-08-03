@@ -11,8 +11,7 @@ export default defineConfig(({ mode }) => ({
   base: mode === 'production' ? '/Web-Portfolio' : '/',
   resolve: {
     alias: {
-      // '@': '/src',
-      '@icons': './icons', // This works for public/icons
+      // '@': './src',
     },
   },
 }))
