@@ -1,5 +1,6 @@
 {
     "section": "Experience",
+    "button": "My Full Experience",
     "positions": {
         "mbank1": {
             "position": "Regression Tester of Digital Channels",
@@ -11,7 +12,16 @@
             "description": "🔹manual testing of mobile apps and internet banking to ensure stability and functionality\n🔹regression testing after updates\n🔹reporting bugs\n🔹conducting monthly benchmarking of new digital banking features to identify market trends and innovations\n\nIn addition, occasionally providing support for SME registration processes by reviewing functionality and translations to ensure a smooth user experience.\n\nIn the past 5 months, I have been onboarding into a reporting position in addition to my regular testing tasks.",
             "attributes": "Regression Testing, Manual Testing, Jira"
         },
-
+        "decathlon": {
+            "position": "Sport Advisor",
+            "period": "August 2022 - October 2023",
+            "company_name": "Decathlon Slovakia",
+            "company_location": "Bratislava, Bory Mall, Slovakia",
+            "company_type": "Part-time",
+            "job_sector": "Retail",
+            "description": "🔹providing customer service, offering guidance and product recommendations\n🔹ensuring product availability for customers\n🔹collaboration with a dynamic team\n🔹managed cash transactions\n🔹stock organization, restocking, and conducting inventory checks\n🔹resolved customer issues",
+            "attributes": "Customer Service, Product Knowledge, Teamwork, Cash Handling, Problem Solving, Inventory Management"
+        },
         "mbank2": {
             "position": "Reporting Specialist",
             "period": "July 2025 - present",

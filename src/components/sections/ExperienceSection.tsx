@@ -1,9 +1,13 @@
 import PositionCard from "../workExperience/PositionCard";
 import SectionHeader from "../highlight/SectionHeader";
 import { useTranslation } from "react-i18next";
+import Button from "../button/Button";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 export default function ExperienceSection() {
   const { t } = useTranslation(["experience", "navbar"]);
+  const navigate = useNavigate();
 
   return (
     <div className="flex flex-col px-5 gap-3 items-center">
@@ -48,6 +52,16 @@ export default function ExperienceSection() {
           attributes={t("positions.mbank2.attributes")}
         />
       </div>
+
+      <Button
+        label={t("button")}
+        icon={<FaArrowRightLong />}
+        // onClick={() => {
+        //   navigate("/experience");
+        //   window.scrollTo({ top: 0, behavior: "smooth" }); // TODO nejak to glitchuje
+        // }}
+        onClick={() => navigate("/")}
+      />
     </div>
   );
 }

@@ -63,8 +63,7 @@ export default function ProjectCard(props: Props) {
               showDescription ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
             } 
             md:max-h-0 md:opacity-0 
-            group-hover:md:max-h-40 group-hover:md:opacity-100`}
-          style={{ whiteSpace: "pre-line" }}
+            group-hover:md:max-h-40 group-hover:md:opacity-100 whitespace-pre-line`}
         >
           {props.description}
         </div>

@@ -28,7 +28,7 @@ export default function PositionCard(props: Props) {
       <div className="flex flex-col p-wrapper border-solid border-2 border-[var(--primary)] text-[var(--bcg-text)] rounded-small justify-between gap-2">
         <p
           className="text-p1"
-          // style={{ whiteSpace: "pre-line" }} // neccessary for multiline text to keep \n
+          // style={{ whiteSpace: "pre-line" }} // neccessary for multiline text to keep \n tailwind equivalent whitespace-pre-line
         >
           {props.company}
         </p>
