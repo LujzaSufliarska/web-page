@@ -56,11 +56,10 @@ export default function ExperienceSection() {
       <Button
         label={t("button")}
         icon={<FaArrowRightLong />}
-        // onClick={() => {
-        //   navigate("/experience");
-        //   window.scrollTo({ top: 0, behavior: "smooth" }); // TODO nejak to glitchuje
-        // }}
-        onClick={() => navigate("/")}
+        onClick={() => {
+          navigate("/experience");
+          window.scrollTo({ top: 0, behavior: "smooth" }); // TODO nejak to glitchuje
+        }}
       />
     </div>
   );

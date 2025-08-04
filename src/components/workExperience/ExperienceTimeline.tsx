@@ -9,7 +9,7 @@ export default function ExperienceTimeline() {
   const { t } = useTranslation("experience");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const containerWidth = 1300; // TODO Adjust accordingly to viewport
+  const containerWidth = 1500; // TODO Adjust accordingly to viewport
   const allExperiences = Object.values(t("positions", { returnObjects: true }));
 
   const { firstJobStart, lastJobEnd } = getFirstAndLastJobDates(allExperiences);
@@ -22,6 +22,10 @@ export default function ExperienceTimeline() {
   const durationMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
 
   const [hoveredBar, setHoveredBar] = useState<number | null>(null);
+  const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
 
   // Scroll to show the right side (present jobs)
   useEffect(() => {
@@ -29,7 +33,72 @@ export default function ExperienceTimeline() {
       const scrollContainer = scrollContainerRef.current;
       scrollContainer.scrollLeft = Math.max(0, containerWidth);
     }
-  }, [containerWidth, allExperiences]);
+  }, []);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = scrollContainerRef.current?.getBoundingClientRect();
+
+    if (rect) {
+      setMousePosition({
+        x:
+          e.clientX - rect.left + (scrollContainerRef.current?.scrollLeft || 0),
+        y: e.clientY - rect.top,
+      });
+    }
+  };
+
+  //   const getTooltipPosition = (mouseX: number, mouseY: number) => {
+  //     const tooltipWidth = 200; // min width lower
+  //     const tooltipHeight = 80; // cca
+
+  //     let x = mouseX;
+  //     let y = mouseY - tooltipHeight;
+
+  //     if (x < tooltipWidth) {
+  //       x = tooltipWidth;
+  //     } else if (x > containerWidth - tooltipWidth / 2) {
+  //       x = containerWidth - tooltipWidth;
+  //     }
+
+  //     // Tooltip overflow at top
+  //     if (y < 0) {
+  //       y = mouseY; // Show below cursor instead
+  //     }
+
+  //     return { x, y };
+  //   };
+
+  const getTooltipPosition = (mouseX: number, mouseY: number) => {
+    const tooltipWidth = 200;
+    const tooltipHeight = 80;
+
+    // Get the visible viewport width of the scroll container
+    const viewportWidth =
+      scrollContainerRef.current?.clientWidth || containerWidth;
+    const scrollLeft = scrollContainerRef.current?.scrollLeft || 0;
+
+    // Calculate position relative to viewport, not absolute content
+    const mouseXInViewport = mouseX - scrollLeft;
+
+    let x = mouseX; // Start with absolute position
+    let y = mouseY - tooltipHeight;
+
+    // Adjust X position if tooltip would overflow viewport
+    if (mouseXInViewport < tooltipWidth / 2) {
+      // Too close to left edge of viewport
+      x = scrollLeft + tooltipWidth / 2;
+    } else if (mouseXInViewport > viewportWidth - tooltipWidth / 2) {
+      // Too close to right edge of viewport
+      x = scrollLeft + viewportWidth - tooltipWidth / 2;
+    }
+
+    // Handle Y overflow
+    if (y < 0) {
+      y = mouseY + 20; // Show below cursor with some offset
+    }
+
+    return { x, y };
+  };
 
   return (
     <div className="p-4">
@@ -42,9 +111,10 @@ export default function ExperienceTimeline() {
       <div
         className="overflow-x-auto border rounded bg-white whitespace-nowrap"
         ref={scrollContainerRef}
+        onMouseMove={handleMouseMove}
       >
         <div
-          className="relative h-48"
+          className="relative h-45"
           style={{ width: containerWidth, minWidth: containerWidth }}
         >
           {/* Month markers */}
@@ -93,6 +163,7 @@ export default function ExperienceTimeline() {
           })}
 
           {/* Events */}
+          {/* TODO este ked kliknem na bar tak ta to moze scrollnut na to oknieko ktore bude nizsie */}
           {allExperiences.map((event, id) => {
             const [eventStartDate, eventEnd] = event.period.split(" - ");
             const eventEndDate =
@@ -144,8 +215,12 @@ export default function ExperienceTimeline() {
                   <div
                     className="absolute z-50 bg-gray-900 text-white rounded-lg p-2 shadow-xl transform -translate-x-1/2 pointer-events-none"
                     style={{
-                      top: 50 + id * 30 - 10,
-                      left: startPx + barWidth / 2,
+                      //   top: 50 + id * 30 - 10,
+                      //   left: startPx + barWidth / 2,
+                      top: getTooltipPosition(mousePosition.x, mousePosition.y)
+                        .y,
+                      left: getTooltipPosition(mousePosition.x, mousePosition.y)
+                        .x,
                       minWidth: "200px",
                     }}
                   >
