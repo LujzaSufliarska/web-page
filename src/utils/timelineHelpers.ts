@@ -28,29 +28,25 @@ export function getFirstAndLastJobDates(positions: { period: string }[]) {
 
 
 
-// export function getPosition(date: string, containerWidth: number, start: number, duration: number): number {
-//   const year = parseDate(date).getFullYear();
-//   const ratio = (year - start) / duration;
+// old not used. usable when i want to show timeline in years only but it was not visually accurate
+export function getPositionYear(date: string, containerWidth: number, start: number, duration: number): number {
+  const year = parseDate(date).getFullYear();
+  const ratio = (year - start) / duration;
 
-//   return ratio * containerWidth;
-// }
+  return ratio * containerWidth;
+}
 
-export function getPosition(date: string, containerWidth: number, startDate: Date, endDate: Date, includeMonth = false): number {
-  const targetDate = parseDate(date);
+export function getPosition(eventDate: string, containerWidth: number, firstJobStartDate: Date, totalMonths: number, includeMonth = false): number {
+  const targetDate = parseDate(eventDate);
 
   if (includeMonth) {
-    targetDate.setMonth(targetDate.getMonth() + 1);
+    targetDate.setMonth(targetDate.getMonth() + 1); // work ended in that month not before it
   }
-  
-  // Celkový počet mesiacov medzi startDate a endDate
-  const totalMonths =
-    (endDate.getFullYear() - startDate.getFullYear()) * 12 +
-    (endDate.getMonth() - startDate.getMonth());
 
-  // Počet mesiacov od začiatku do targetDate
+  // Number of months from first job to start of this job
   const monthsFromStart =
-    (targetDate.getFullYear() - startDate.getFullYear()) * 12 +
-    (targetDate.getMonth() - startDate.getMonth());
+    (targetDate.getFullYear() - firstJobStartDate.getFullYear()) * 12 +
+    (targetDate.getMonth() - firstJobStartDate.getMonth());
 
   const ratio = monthsFromStart / totalMonths;
 
