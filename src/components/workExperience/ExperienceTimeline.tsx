@@ -9,12 +9,20 @@ import { TimelineMarker } from "../timeline/TimelineMarker";
 
 export default function ExperienceTimeline() {
   const { t } = useTranslation("experience");
+  const { t: t_other } = useTranslation("milestones");
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const containerWidth = 1300; // TODO Adjust accordingly to viewport
-  const allExperiences = Object.values(t("positions", { returnObjects: true }));
 
-  const { firstJobStart, lastJobEnd } = getFirstAndLastJobDates(allExperiences);
+  const allExperiences = Object.values(t("positions", { returnObjects: true }));
+  const allMilestones = Object.values(
+    t_other("milestones", { returnObjects: true })
+  );
+  const allEvents = [...allExperiences, ...allMilestones];
+
+  //   const { firstJobStart, lastJobEnd } = getFirstAndLastJobDates(allExperiences);
+  const { firstJobStart, lastJobEnd } = getFirstAndLastJobDates(allEvents);
 
   const startYear = firstJobStart.getFullYear();
   const startMonth = firstJobStart.getMonth();
@@ -29,8 +37,14 @@ export default function ExperienceTimeline() {
     y: 0,
   });
 
+  //   const positionsWithLines = assignPositionsToLines(
+  //     allExperiences,
+  //     firstJobStart,
+  //     durationMonths,
+  //     containerWidth
+  //   );
   const positionsWithLines = assignPositionsToLines(
-    allExperiences,
+    allEvents,
     firstJobStart,
     durationMonths,
     containerWidth

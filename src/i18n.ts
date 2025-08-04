@@ -11,6 +11,7 @@ import enProjects from './locales/en/projects.json';
 import enContact from './locales/en/contact.json';
 import enFooter from './locales/en/footer.json';
 import enOther from './locales/en/other.json';
+import enMilestones from './locales/en/milestones.json';
 
 import skNavbar from './locales/sk/navbar.json';
 import skHome from './locales/sk/home.json';
@@ -21,6 +22,7 @@ import skProjects from './locales/sk/projects.json';
 import skContact from './locales/sk/contact.json';
 import skFooter from './locales/sk/footer.json';
 import skOther from './locales/sk/other.json';
+import skMilestones from './locales/sk/other.json';
 
 const savedLanguage = localStorage.getItem('appLanguage') || 'en';
 
@@ -38,7 +40,8 @@ i18n
         projects: enProjects,
         contact: enContact,
         footer: enFooter,
-        other: enOther
+        other: enOther,
+        milestones: enMilestones
       },
       sk: {
         navbar: skNavbar,
@@ -49,13 +52,14 @@ i18n
         projects: skProjects,
         contact: skContact,
         footer: skFooter,
-        other: skOther
+        other: skOther,
+        milestones: skMilestones
       }
     },
 
     lng: savedLanguage, // DEFAULT LANGUAGE - after F5 changes to this -> local storage used
     fallbackLng: "en", // Fallback if selected language is missing
-    ns: ['navbar', 'home', 'about', 'experience', 'testimonials', 'projects', 'contact', 'footer', 'other'], // namespaces for the translation files
+    ns: ['navbar', 'home', 'about', 'experience', 'testimonials', 'projects', 'contact', 'footer', 'other', 'milestones'], // namespaces for the translation files
     defaultNS: 'home',
     
     interpolation: {
