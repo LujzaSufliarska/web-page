@@ -2,14 +2,16 @@ import { useTranslation } from "react-i18next";
 import {
   getFirstAndLastJobDates,
   getPosition,
+  assignPositionsToLines,
 } from "../../utils/timelineHelpers";
 import { useEffect, useRef, useState } from "react";
+import { TimelineMarker } from "../timeline/TimelineMarker";
 
 export default function ExperienceTimeline() {
   const { t } = useTranslation("experience");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const containerWidth = 1500; // TODO Adjust accordingly to viewport
+  const containerWidth = 1300; // TODO Adjust accordingly to viewport
   const allExperiences = Object.values(t("positions", { returnObjects: true }));
 
   const { firstJobStart, lastJobEnd } = getFirstAndLastJobDates(allExperiences);
@@ -27,13 +29,52 @@ export default function ExperienceTimeline() {
     y: 0,
   });
 
+  const positionsWithLines = assignPositionsToLines(
+    allExperiences,
+    firstJobStart,
+    durationMonths,
+    containerWidth
+  );
+  const totalLines =
+    Math.max(...positionsWithLines.map((p) => p.lineIndex)) + 1;
+
   // Scroll to show the right side (present jobs)
   useEffect(() => {
     if (scrollContainerRef.current && containerWidth > 0) {
       const scrollContainer = scrollContainerRef.current;
-      scrollContainer.scrollLeft = Math.max(0, containerWidth);
+      scrollContainer.scrollLeft = scrollContainer.scrollWidth;
     }
   }, []);
+
+  const monthMarkers = [...Array(durationMonths + 3)].map((_, i) => {
+    const date = new Date(startYear, startMonth - 1 + i, 1); // i want one month before first event on the timeline
+    const monthShort = date.toLocaleString("en-US", {
+      month: "short",
+    });
+    const year = date.getFullYear(); //startMonth + i -> date roll over into a different year 12 is jan
+
+    const left = (i / durationMonths) * containerWidth;
+
+    return (
+      <TimelineMarker
+        key={`${year}-${date.getMonth()}`}
+        left={left}
+        label={monthShort}
+        type="month"
+      />
+    );
+  });
+
+  const yearMarkers = [...Array(Math.floor(durationMonths / 12) + 1)].map(
+    (_, i) => {
+      const year = startYear + i;
+      const left =
+        ((i * 12) / durationMonths) * containerWidth -
+        startMonth * (containerWidth / durationMonths);
+
+      return <TimelineMarker key={year} left={left} label={year} type="year" />;
+    }
+  );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = scrollContainerRef.current?.getBoundingClientRect();
@@ -47,27 +88,7 @@ export default function ExperienceTimeline() {
     }
   };
 
-  //   const getTooltipPosition = (mouseX: number, mouseY: number) => {
-  //     const tooltipWidth = 200; // min width lower
-  //     const tooltipHeight = 80; // cca
-
-  //     let x = mouseX;
-  //     let y = mouseY - tooltipHeight;
-
-  //     if (x < tooltipWidth) {
-  //       x = tooltipWidth;
-  //     } else if (x > containerWidth - tooltipWidth / 2) {
-  //       x = containerWidth - tooltipWidth;
-  //     }
-
-  //     // Tooltip overflow at top
-  //     if (y < 0) {
-  //       y = mouseY; // Show below cursor instead
-  //     }
-
-  //     return { x, y };
-  //   };
-
+  // VIBE CODED lebo netusim jak to fixnut
   const getTooltipPosition = (mouseX: number, mouseY: number) => {
     const tooltipWidth = 200;
     const tooltipHeight = 80;
@@ -81,12 +102,12 @@ export default function ExperienceTimeline() {
     const mouseXInViewport = mouseX - scrollLeft;
 
     let x = mouseX; // Start with absolute position
-    let y = mouseY - tooltipHeight;
+    let y = mouseY - tooltipHeight - 5;
 
-    // Adjust X position if tooltip would overflow viewport
+    // Tooltip would overflow viewport
     if (mouseXInViewport < tooltipWidth / 2) {
       // Too close to left edge of viewport
-      x = scrollLeft + tooltipWidth / 2;
+      x = scrollLeft + tooltipWidth / 2 + 30;
     } else if (mouseXInViewport > viewportWidth - tooltipWidth / 2) {
       // Too close to right edge of viewport
       x = scrollLeft + viewportWidth - tooltipWidth / 2;
@@ -106,6 +127,7 @@ export default function ExperienceTimeline() {
       <div className="text-default font-bold text-[var(--bcg-text)]">
         Interactive Timeline ({startYear} - {endYear})
       </div>
+      <div className="text-p2 text-[var(--bcg-text)]">(Hover over bars)</div>
 
       {/* timeline */}
       <div
@@ -115,80 +137,34 @@ export default function ExperienceTimeline() {
       >
         <div
           className="relative h-45"
-          style={{ width: containerWidth, minWidth: containerWidth }}
+          style={{
+            width: containerWidth,
+            minWidth: containerWidth,
+            height: 45 + totalLines * 30 + 75, // 75 buffer na citanie
+          }}
         >
           {/* Month markers */}
-          {[...Array(durationMonths + 2)].map((_, i) => {
-            const date = new Date(startYear, startMonth + i, 1);
-            const monthShort = date.toLocaleString("en-US", {
-              month: "short",
-            });
-            const year = date.getFullYear(); //startMonth + i -> date  roll over into a different year 12 is jan
-
-            const left = (i / durationMonths) * containerWidth;
-
-            return (
-              <div
-                key={`${year}-${date.getMonth()}`}
-                style={{ position: "absolute", left }}
-              >
-                <div className="w-px h-7 bg-gray-300 mb-1" />{" "}
-                {/* vertical line above */}
-                <div className="text-[10px] text-gray-400">{monthShort}</div>
-              </div>
-            );
-          })}
+          {monthMarkers}
 
           {/* Year markers */}
           {startMonth != 0 && (
-            <div key={startYear} style={{ position: "absolute", left: 0 }}>
-              <div className="w-px h-4 bg-gray-400 mb-1" />{" "}
-              <div className="text-xs text-gray-600">{startYear}</div>
-            </div>
+            <TimelineMarker
+              key={startYear}
+              left={0}
+              label={startYear}
+              type="year"
+            />
           )}
-
-          {[...Array(Math.floor(durationMonths / 12) + 1)].map((_, i) => {
-            const year = startYear + i;
-            const left =
-              ((i * 12) / durationMonths) * containerWidth -
-              startMonth * (containerWidth / durationMonths);
-
-            return (
-              // TODO z tohto mozem urobit aj komponent
-              <div key={year} style={{ position: "absolute", left }}>
-                <div className="w-px h-4 bg-gray-400 mb-1" />{" "}
-                <div className="text-xs text-gray-600">{year}</div>
-              </div>
-            );
-          })}
+          {yearMarkers}
 
           {/* Events */}
           {/* TODO este ked kliknem na bar tak ta to moze scrollnut na to oknieko ktore bude nizsie */}
-          {allExperiences.map((event, id) => {
-            const [eventStartDate, eventEnd] = event.period.split(" - ");
-            const eventEndDate =
-              eventEnd.toLowerCase() === "present"
-                ? new Date().toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                  })
-                : eventEnd;
-
-            const startPx = getPosition(
-              eventStartDate,
-              containerWidth,
-              firstJobStart,
-              durationMonths
+          {positionsWithLines.map((positionData, id) => {
+            const { position, lineIndex, startPx, barWidth } = positionData;
+            const tooltipPos = getTooltipPosition(
+              mousePosition.x,
+              mousePosition.y
             );
-            const endPx = getPosition(
-              eventEndDate,
-              containerWidth,
-              firstJobStart,
-              durationMonths,
-              true
-            );
-
-            const barWidth = Math.max(endPx - startPx, 4);
 
             return (
               <>
@@ -198,8 +174,8 @@ export default function ExperienceTimeline() {
                   className="absolute rounded px-2 text-white overflow-hidden text-ellipsis
                   hover:brightness-115 hover:scale-105 transition-all duration-150 ease-out"
                   style={{
-                    top: 50 + id * 30,
-                    left: startPx,
+                    top: 50 + lineIndex * 30,
+                    left: startPx + containerWidth / durationMonths,
                     width: barWidth,
                     backgroundColor: "green",
                   }}
@@ -207,7 +183,7 @@ export default function ExperienceTimeline() {
                   onMouseLeave={() => setHoveredBar(null)}
                   //   title={`${event.position}: ${event.period}`}
                 >
-                  {event.position} - {event.company_name}
+                  {position.position} - {position.company_name}
                 </div>
 
                 {/* Custom Event Tooltip */}
@@ -215,21 +191,19 @@ export default function ExperienceTimeline() {
                   <div
                     className="absolute z-50 bg-gray-900 text-white rounded-lg p-2 shadow-xl transform -translate-x-1/2 pointer-events-none"
                     style={{
-                      //   top: 50 + id * 30 - 10,
-                      //   left: startPx + barWidth / 2,
-                      top: getTooltipPosition(mousePosition.x, mousePosition.y)
-                        .y,
-                      left: getTooltipPosition(mousePosition.x, mousePosition.y)
-                        .x,
+                      top: tooltipPos.y,
+                      left: tooltipPos.x,
                       minWidth: "200px",
+                      //   width: "200px",
+                      //   whiteSpace: "pre-wrap"
                     }}
                   >
-                    <div className="font-bold text-p3">{event.position}</div>
+                    <div className="font-bold text-p3">{position.position}</div>
                     <div className="text-gray-300 text-p3">
-                      {event.company_name}
+                      {position.company_name}
                     </div>
                     <div className="text-gray-400 text-p2 mt-1 border-t border-gray-700 pt-1">
-                      {event.period}
+                      {position.period}
                     </div>
                   </div>
                 )}

@@ -52,3 +52,132 @@ export function getPosition(eventDate: string, containerWidth: number, firstJobS
 
   return ratio * containerWidth;
 }
+
+
+// ------------------------------------------------------------------------------------------------------------------------------
+
+
+interface PositionWithLine {
+  position: any;
+  startDate: Date;
+  endDate: Date;
+  lineIndex: number;
+  startPx: number;
+  endPx: number;
+  barWidth: number;
+}
+
+interface LineOccupancy {
+  lineIndex: number;
+  occupiedRanges: Array<{ start: number; end: number; startDate: Date; endDate: Date }>;
+}
+
+export function assignPositionsToLines(
+  positions: any[],
+  firstJobStart: Date,
+  durationMonths: number,
+  containerWidth: number
+): PositionWithLine[] {
+  const result: PositionWithLine[] = [];
+  const lines: LineOccupancy[] = [];
+
+  // Sort positions by start date to process them chronologically
+  const sortedPositions = [...positions].sort((a, b) => {
+    const startA = a.period.split(" - ")[0];
+    const startB = b.period.split(" - ")[0];
+
+    return parseDate(startA).getTime() - parseDate(startB).getTime();
+  });
+
+  for (const position of sortedPositions) {
+    const [eventStartDate, eventEnd] = position.period.split(" - ");
+    const eventEndDate = eventEnd.toLowerCase() === "present"
+      ? new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" })
+      : eventEnd;
+
+    const startDate = parseDate(eventStartDate);
+    const endDate = parseDate(eventEndDate);
+    
+    const startPx = getPosition(eventStartDate, containerWidth, firstJobStart, durationMonths);
+    const endPx = getPosition(eventEndDate, containerWidth, firstJobStart, durationMonths, true);
+    const barWidth = Math.max(endPx - startPx, 4);
+
+    // Find a suitable line for this position
+    let assignedLineIndex = findSuitableLine(lines, startDate, endDate, startPx, endPx);
+
+    // If no suitable line found, create a new one
+    if (assignedLineIndex === -1) {
+      assignedLineIndex = lines.length;
+      lines.push({
+        lineIndex: assignedLineIndex,
+        occupiedRanges: []
+      });
+    }
+
+    // Add this position to the assigned line
+    lines[assignedLineIndex].occupiedRanges.push({
+      start: startPx,
+      end: endPx,
+      startDate,
+      endDate
+    });
+
+    result.push({
+      position,
+      lineIndex: assignedLineIndex,
+      startPx,
+      endPx,
+      barWidth,
+      startDate,
+      endDate
+    });
+  }
+
+  return result;
+}
+
+function findSuitableLine(
+  lines: LineOccupancy[],
+  newStartDate: Date,
+  newEndDate: Date,
+  newStartPx: number,
+  newEndPx: number
+): number {
+  const visualLineBuffer = 0; //Claude set to 5, but does not matter bcs lines are not adjacent
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+    let canFitOnThisLine = true;
+
+    for (const positionInLine of line.occupiedRanges) {
+      // Check for overlap (positions that run simultaneously)
+      const hasTimeOverlap = (
+        (positionInLine.endDate > newStartDate && positionInLine.startDate < newEndDate)
+      );
+
+      // Check for adjacency (positions that end/start at the same time)
+      const isAdjacent = (
+        positionInLine.endDate.getTime() === newStartDate.getTime() ||
+        positionInLine.startDate.getTime() === newEndDate.getTime() ||
+        positionInLine.end === newStartPx ||
+        positionInLine.start === newEndPx
+      );
+
+      // Check for visual proximity (bars that would be too close visually)
+      const hasOverlap = (
+        positionInLine.end + visualLineBuffer > newStartPx && positionInLine.start - visualLineBuffer < newEndPx
+      );
+
+      if (hasTimeOverlap || isAdjacent || hasOverlap) {
+        canFitOnThisLine = false;
+        break;
+      }
+    }
+
+    if (canFitOnThisLine) {
+      return i;
+    }
+  }
+
+  return -1; // No suitable line found
+}
