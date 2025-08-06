@@ -14,13 +14,16 @@ export default function ExperienceSection() {
     const allExperiences = Object.values(
       t("positions", { returnObjects: true })
     );
+    const presentKeyword = t("key_for_period_end", {
+      ns: "experience",
+    }).toLowerCase();
 
     // TODO language switch fail
     const sortedByEndDate = allExperiences
       .map((position) => {
         const [start, end] = position.period.split(" - ");
         const endDate =
-          end.toLowerCase() === "present" ? new Date() : parseDate(end);
+          end.toLowerCase() === presentKeyword ? new Date() : parseDate(end);
 
         return {
           ...position,

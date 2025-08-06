@@ -21,6 +21,8 @@ export function getFirstAndLastJobDates(positions: {
   period: string }[],
 ) {
   const { t } = useTranslation("experience");
+  const presentKeyword = t("key_for_period_end").toLowerCase()
+
   const startDates: Date[] = [];
   const endDates: Date[] = [];
 
@@ -29,7 +31,7 @@ export function getFirstAndLastJobDates(positions: {
 
     startDates.push(parseDate(start));
     // endDates.push(end.toLowerCase() === t("key_for_period_end").toLowerCase() ? new Date() : parseDate(end));
-    endDates.push(end.toLowerCase() === "present".toLowerCase() ? new Date() : parseDate(end));
+    endDates.push(end.toLowerCase() === presentKeyword.toLowerCase() ? new Date() : parseDate(end));
   });
 
   const firstJobStart = new Date(Math.min(...startDates.map(d => d.getTime())));
@@ -91,6 +93,8 @@ export function assignPositionsToLines(
   containerWidth: number
 ): PositionWithLine[] {
   const { t } = useTranslation("experience");
+  const presentKeyword = t("key_for_period_end").toLowerCase()
+
   const result: PositionWithLine[] = [];
   const lines: LineOccupancy[] = [];
 
@@ -105,7 +109,7 @@ export function assignPositionsToLines(
   for (const position of sortedPositions) {
     const [eventStartDate, eventEnd] = position.period.split(" - ");
     // const eventEndDate = eventEnd.toLowerCase() === t("key_for_period_end").toLowerCase()
-    const eventEndDate = eventEnd.toLowerCase() === "present".toLowerCase()
+    const eventEndDate = eventEnd.toLowerCase() === presentKeyword.toLowerCase()
       ? new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" })
       : eventEnd;
 

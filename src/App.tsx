@@ -19,6 +19,7 @@ function App() {
       </Routes>
     </BrowserRouter>
 
+    // TODO language switch on experience page
     // TODO change favicon (co to je?) and title of page shown in browser tab
     // TODO when on page, going to project and going back images are not loaded -> after F5 they are
     // TODO accessibility pre nevidiacich?

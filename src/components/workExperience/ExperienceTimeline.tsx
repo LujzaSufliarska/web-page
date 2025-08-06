@@ -7,6 +7,7 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { TimelineMarker } from "../timeline/TimelineMarker";
 import EventBar from "../timeline/EventBar";
+import i18n from "../../i18n";
 
 export default function ExperienceTimeline() {
   const { t } = useTranslation("experience");
@@ -67,9 +68,12 @@ export default function ExperienceTimeline() {
 
   const monthMarkers = [...Array(durationMonths + 3)].map((_, i) => {
     const date = new Date(startYear, startMonth - 1 + i, 1); // i want one month before first event on the timeline
-    const monthShort = date.toLocaleString("en-US", {
-      month: "short",
-    });
+    const monthShort = date.toLocaleString(
+      i18n.language === "sk" ? "sk-SK" : "en-US",
+      {
+        month: "short",
+      }
+    );
     const year = date.getFullYear(); //startMonth + i -> date roll over into a different year 12 is jan
 
     const left = (i / durationMonths) * containerWidth;
