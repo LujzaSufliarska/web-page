@@ -1,20 +1,23 @@
 {
     "section": "Miľníky",
+    "key_for_period_end": "súčasnosť",
     "milestones": {
-        "HighSchool": {
-            "position": "Študent Strednej Školy",
-            "period": "September 2017 - Jún 2021",
-            "company_name": "Gymnázium Ľudovíta Štúra Zvolen"
-        },
         "Uni1": {
-            "position": "Študent Vysokej Školy - Bakalárske Štúdium",
+            "position": "Bakalárske Štúdium",
             "period": "September 2021 - Jún 2024",
             "company_name": "FIIT STU"
         },
         "Uni2": {
-            "position": "Študent Vysokej Školy - Inžinierske Štúdium",
+            "position": "Inžinierske Štúdium",
             "period": "September 2024 - súčastnosť",
             "company_name": "FIIT STU"
+        }
+    },
+    "not_used_milestones": {
+        "HighSchool": {
+                    "position": "Študent Strednej Školy",
+                    "period": "September 2017 - Jún 2021",
+                    "company_name": "Gymnázium Ľudovíta Štúra Zvolen"
         }
     }
 }

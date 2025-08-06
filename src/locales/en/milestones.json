@@ -1,20 +1,23 @@
 {
     "section": "Milestones",
+    "key_for_period_end": "present",
     "milestones": {
-        "HighSchool": {
-            "position": "High School Student",
-            "period": "September 2017 - June 2021",
-            "company_name": "Gymnázium Ľudovíta Štúra Zvolen"
-        },
         "Uni1": {
-            "position": "University Student - Bachelor Studies",
+            "position": "Bachelor Studies",
             "period": "September 2021 - June 2024",
             "company_name": "FIIT STU"
         },
         "Uni2": {
-            "position": "University Student - Master Studies",
+            "position": "Master Studies",
             "period": "September 2024 - present",
             "company_name": "FIIT STU"
+        }
+    },
+    "not_used_milestones": {
+                "HighSchool": {
+            "position": "High School Student",
+            "period": "September 2017 - June 2021",
+            "company_name": "Gymnázium Ľudovíta Štúra Zvolen"
         }
     }
 }

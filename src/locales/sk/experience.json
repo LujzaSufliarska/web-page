@@ -1,10 +1,11 @@
 {
     "section": "Pracovné Skúsenosti",
+    "key_for_period_end": "súčasnosť",
     "button": "Všetky moje skúsenosti",
     "positions": {
         "mbank2": {
             "position": "Špecialista pre tvorbu správ a reportov",
-            "period": "Júl 2025 - súčastnosť",
+            "period": "Júl 2025 - súčasnosť",
             "company_name": "mBank SA",
             "company_location": "Hybrid (Bratislava, Slovensko)",
             "company_type": "Part-time",

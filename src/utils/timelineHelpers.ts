@@ -1,15 +1,26 @@
+import { useTranslation } from "react-i18next";
+
 export function parseDate(date: string): Date {
   const [month, year] = date.split(" ");
 
   const months: { [key: string]: number } = {
     // JS Date months are 0-indexed
-    January: 0, February: 1, March: 2, April: 3, May: 4, June: 5, July: 6, August: 7, September: 8, October: 9, November: 10, December: 11
+    // English
+    January: 0, February: 1, March: 2, April: 3, May: 4, June: 5,
+    July: 6, August: 7, September: 8, October: 9, November: 10, December: 11,
+
+    // Slovak
+    Január: 0, Február: 1, Marec: 2, Apríl: 3, Máj: 4, Jún: 5,
+    Júl: 6, Október: 9
   };
 
   return new Date(parseInt(year), months[month]);
 }
 
-export function getFirstAndLastJobDates(positions: { period: string }[]) {
+export function getFirstAndLastJobDates(positions: {
+  period: string }[],
+) {
+  const { t } = useTranslation("experience");
   const startDates: Date[] = [];
   const endDates: Date[] = [];
 
@@ -17,7 +28,8 @@ export function getFirstAndLastJobDates(positions: { period: string }[]) {
     const [start, end] = pos.period.split(" - ");
 
     startDates.push(parseDate(start));
-    endDates.push(end.toLowerCase() === "present" ? new Date() : parseDate(end));
+    // endDates.push(end.toLowerCase() === t("key_for_period_end").toLowerCase() ? new Date() : parseDate(end));
+    endDates.push(end.toLowerCase() === "present".toLowerCase() ? new Date() : parseDate(end));
   });
 
   const firstJobStart = new Date(Math.min(...startDates.map(d => d.getTime())));
@@ -78,6 +90,7 @@ export function assignPositionsToLines(
   durationMonths: number,
   containerWidth: number
 ): PositionWithLine[] {
+  const { t } = useTranslation("experience");
   const result: PositionWithLine[] = [];
   const lines: LineOccupancy[] = [];
 
@@ -91,7 +104,8 @@ export function assignPositionsToLines(
 
   for (const position of sortedPositions) {
     const [eventStartDate, eventEnd] = position.period.split(" - ");
-    const eventEndDate = eventEnd.toLowerCase() === "present"
+    // const eventEndDate = eventEnd.toLowerCase() === t("key_for_period_end").toLowerCase()
+    const eventEndDate = eventEnd.toLowerCase() === "present".toLowerCase()
       ? new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" })
       : eventEnd;
 

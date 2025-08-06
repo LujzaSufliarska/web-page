@@ -6,10 +6,12 @@ import {
 } from "../../utils/timelineHelpers";
 import { useEffect, useRef, useState } from "react";
 import { TimelineMarker } from "../timeline/TimelineMarker";
+import EventBar from "../timeline/EventBar";
 
 export default function ExperienceTimeline() {
   const { t } = useTranslation("experience");
   const { t: t_other } = useTranslation("milestones");
+  const presentKeyword = t_other("key_for_period_end").toLowerCase();
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -49,6 +51,9 @@ export default function ExperienceTimeline() {
     durationMonths,
     containerWidth
   );
+
+  //   console.log(positionsWithLines);
+
   const totalLines =
     Math.max(...positionsWithLines.map((p) => p.lineIndex)) + 1;
 
@@ -180,25 +185,19 @@ export default function ExperienceTimeline() {
               mousePosition.y
             );
 
+            const color = positionData.position.job_sector ? "green" : "blue";
+
             return (
               <>
-                {/* Event Bar */}
-                <div
-                  key={id}
-                  className="absolute rounded px-2 text-white overflow-hidden text-ellipsis
-                  hover:brightness-115 hover:scale-105 transition-all duration-150 ease-out"
-                  style={{
-                    top: 50 + lineIndex * 30,
-                    left: startPx + containerWidth / durationMonths,
-                    width: barWidth,
-                    backgroundColor: "green",
-                  }}
-                  onMouseEnter={() => setHoveredBar(id)}
-                  onMouseLeave={() => setHoveredBar(null)}
-                  //   title={`${event.position}: ${event.period}`}
-                >
-                  {position.position} - {position.company_name}
-                </div>
+                <EventBar
+                  id={id}
+                  lineIndex={lineIndex}
+                  left={startPx + containerWidth / durationMonths}
+                  barWidth={barWidth}
+                  event={position}
+                  setHoveredBar={setHoveredBar}
+                  color={color}
+                />
 
                 {/* Custom Event Tooltip */}
                 {hoveredBar === id && (
