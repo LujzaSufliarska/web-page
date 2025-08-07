@@ -19,9 +19,14 @@ function App() {
       </Routes>
     </BrowserRouter>
 
-    // TODO language switch on experience page
+    // TODO add back button to the pages - experience, projects
+    // TODO check whether project object cannot be enlarged
+    // TODO check navigation - maybe use axios so page would refersh when comming from other pages - experience, project
+    // ->      TODO when on page, going to project and going back images are not loaded -> after F5 they are
+
+    // TODO language switch on experience page - nefunguje ani keď dám mesiac ukončenia miesto súčastnosť
+
     // TODO change favicon (co to je?) and title of page shown in browser tab
-    // TODO when on page, going to project and going back images are not loaded -> after F5 they are
     // TODO accessibility pre nevidiacich?
     // TODO experience page
     // TODO projects page - filtrovanie podľa roku?
