@@ -8,7 +8,7 @@ import "./i18n";
 function App() {
   return (
     <BrowserRouter
-      basename={import.meta.env.MODE === "production" ? "/web-portfolio" : "/"}
+      basename={import.meta.env.MODE === "production" ? "/web-page" : "/"}
     >
       <Routes>
         <Route path="/" element={<MainLayout />}>
@@ -26,7 +26,7 @@ function App() {
 
     // TODO language switch on experience page - nefunguje ani keď dám mesiac ukončenia miesto súčastnosť
 
-    // TODO change favicon (co to je?) and title of page shown in browser tab
+    // TODO change favicon (co to je?) and title of page shown in browser tab -- DONE
     // TODO accessibility pre nevidiacich?
     // TODO experience page
     // TODO projects page - filtrovanie podľa roku?

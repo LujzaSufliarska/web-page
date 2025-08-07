@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     tailwindcss()
   ],
-  base: mode === 'production' ? '/web-portfolio' : '/',
+  base: mode === 'production' ? '/web-page' : '/',
   resolve: {
     alias: {
       // '@': './src',
