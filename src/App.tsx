@@ -8,7 +8,7 @@ import "./i18n";
 function App() {
   return (
     <BrowserRouter
-      basename={import.meta.env.MODE === "production" ? "/Web-Portfolio" : "/"}
+      basename={import.meta.env.MODE === "production" ? "/web-portfolio" : "/"}
     >
       <Routes>
         <Route path="/" element={<MainLayout />}>

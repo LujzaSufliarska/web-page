@@ -1,12 +1,12 @@
 interface Props {
-  key: string | number;
+  id: string | number;
   left: number;
   label: string | number;
   type: "month" | "year";
 }
 
 export function TimelineMarker(props: Props) {
-  const { key, left, label, type } = props;
+  const { id, left, label, type } = props;
 
   const styles = {
     month: {
@@ -26,7 +26,7 @@ export function TimelineMarker(props: Props) {
   const { lineHeight, lineColor, textSize, textColor } = styles[type];
 
   return (
-    <div key={key} style={{ position: "absolute", left }}>
+    <div key={id} style={{ position: "absolute", left }}>
       {/* vertical line above */}
       <div className={`w-px ${lineHeight} ${lineColor} mb-1`} />
       <div className={`${textSize} ${textColor}`}>{label}</div>

@@ -80,7 +80,7 @@ export default function ExperienceTimeline() {
 
     return (
       <TimelineMarker
-        key={`${year}-${date.getMonth()}`}
+        id={`${year}-${date.getMonth()}`}
         left={left}
         label={monthShort}
         type="month"
@@ -95,7 +95,7 @@ export default function ExperienceTimeline() {
         ((i * 12) / durationMonths) * containerWidth -
         startMonth * (containerWidth / durationMonths);
 
-      return <TimelineMarker key={year} left={left} label={year} type="year" />;
+      return <TimelineMarker id={year} left={left} label={year} type="year" />;
     }
   );
 
@@ -172,7 +172,7 @@ export default function ExperienceTimeline() {
           {/* Year markers */}
           {startMonth != 0 && (
             <TimelineMarker
-              key={startYear}
+              id={startYear}
               left={0}
               label={startYear}
               type="year"
