@@ -9,10 +9,16 @@ import { TimelineMarker } from "../timeline/TimelineMarker";
 import EventBar from "../timeline/EventBar";
 import i18n from "../../i18n";
 
-export default function ExperienceTimeline() {
+interface ExperienceTimelineProps {
+  onEventClick: (id: number) => void;
+}
+
+export default function ExperienceTimeline({
+  onEventClick,
+}: ExperienceTimelineProps) {
   const { t } = useTranslation("experience");
   const { t: t_other } = useTranslation("milestones");
-  const presentKeyword = t_other("key_for_period_end").toLowerCase();
+  const presentKeyword = t("key_for_period_end").toLowerCase();
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -22,6 +28,7 @@ export default function ExperienceTimeline() {
   const allMilestones = Object.values(
     t_other("milestones", { returnObjects: true })
   );
+  // sortnute neskor v assignpositiontolines in helper functions
   const allEvents = [...allExperiences, ...allMilestones];
 
   //   const { firstJobStart, lastJobEnd } = getFirstAndLastJobDates(allExperiences);
@@ -181,7 +188,6 @@ export default function ExperienceTimeline() {
           {yearMarkers}
 
           {/* Events */}
-          {/* TODO este ked kliknem na bar tak ta to moze scrollnut na to oknieko ktore bude nizsie */}
           {positionsWithLines.map((positionData, id) => {
             const { position, lineIndex, startPx, barWidth } = positionData;
             const tooltipPos = getTooltipPosition(
@@ -201,6 +207,7 @@ export default function ExperienceTimeline() {
                   event={position}
                   setHoveredBar={setHoveredBar}
                   color={color}
+                  onClickEvent={() => onEventClick(id)}
                 />
 
                 {/* Custom Event Tooltip */}
