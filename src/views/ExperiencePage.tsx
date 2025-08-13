@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
-import ExperienceTimeline from "../components/workExperience/ExperienceTimeline";
 import { useTranslation } from "react-i18next";
+import ExperienceTimeline from "../components/workExperience/ExperienceTimeline";
 import PositionCard from "../components/workExperience/PositionCard";
+import { IoArrowBack } from "react-icons/io5";
 
 export default function ExperiencePage() {
   const { t } = useTranslation("experience");
@@ -34,6 +35,7 @@ export default function ExperiencePage() {
     // TODO neresponzivne plus sirka zalezi od timelineu a neviem to fixnut
     // TODO nad timeline pridat filtre podla roku ze by sa to tam scrollo
     <div className="flex flex-col px-10 py-[20px] mt-[60px] items-center gap-2">
+      {/* <IoArrowBack /> */}
       <div className="text-h4 text-[var(--primary)]">My Journey</div>
       <div className="flex flex-col gap-4">
         <ExperienceTimeline onEventClick={scrollToCard} />

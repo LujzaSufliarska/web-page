@@ -10,7 +10,7 @@ export default function ProjectsSection() {
   const { t } = useTranslation(["projects", "navbar"]);
   const navigate = useNavigate();
 
-  const maxProjects = 4;
+  const maxProjects = 3;
 
   const allProjects = Object.values(t("projects", { returnObjects: true }));
 
@@ -19,7 +19,7 @@ export default function ProjectsSection() {
       <SectionHeader>{t("sections.projects", { ns: "navbar" })}</SectionHeader>
 
       {/* PROJECTS GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 w-full justify-items-center">
         {allProjects.slice(0, maxProjects).map((project, index) => (
           <ProjectCard
             key={index}

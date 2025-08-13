@@ -19,20 +19,20 @@ function App() {
       </Routes>
     </BrowserRouter>
 
-    // TODO add back button to the pages - experience, projects
-    // TODO check whether project object cannot be enlarged
-    // TODO projects page - filtrovanie podľa roku?
-    // TODO pridat sekciu databazy, ikonu unity
-    // TODO offset scroll downu na mobiloch z headera je priliz vysoky
+    // M U S T  D O
     // TODO skusit setnut scale a nech sa len predlzuje ten pas timeline
-    // TODO pri hovery nech sa objavia podrobnosti o pracovnej pozicii na experience page
-    // TODO z CV odstranit ISS program na ing je tam chyba
-    // TODO v CV zmenit QR kod na webpage a aj link
-    // TODO stale nie je refresh po kliknuti
+    // TODO stale nie je refresh po kliknuti na timeline block - obrazky sa nenacitavaju
 
+    // N I C E  T O  D O
+    // TODO offset scroll downu na mobiloch z headera je priliz vysoky
+    // TODO add back button to the pages - experience, projects
+    // TODO projects page - filtrovanie podľa roku?
     // TODO refactor experiencepage.tsx, experiencetimeline.tsx, timelinehelpers.ts
 
-    // TODO change favicon and title of page shown in browser tab -- DONE
+    // D O E S  N O T  M A T T E R
+    // TODO pridat sekciu databazy
+    // TODO pri hovery nech sa objavia podrobnosti o pracovnej pozicii na experience page
+    // TODO change favicon?
     // TODO accessibility pre nevidiacich?
     // TODO na hero stranke zmenit na px-5 ako vsade ale ptm treba upravit poziciu banera. nevedela som jak na to tak som tam nechala px-10
   );

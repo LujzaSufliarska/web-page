@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { FaFilter } from "react-icons/fa6";
+import { IoArrowBack } from "react-icons/io5";
 import ProjectCard from "../components/project/ProjectCard";
 
 export default function ProjectsPage() {
@@ -37,6 +38,7 @@ export default function ProjectsPage() {
     // TODO pridat filter na roky pripadne pre top 4 projekty ktore chcem zobrazit dat dajaky order alebo flag a podla toho to zobrazit v tej druhej sekcii
 
     <div className="flex flex-col px-10 py-[20px] mt-[60px] items-center gap-medium">
+      {/* <IoArrowBack /> */}
       <div className="text-h4 text-[var(--primary)]">All of My Projects</div>
 
       {/* MOBILE FILTER MENU */}

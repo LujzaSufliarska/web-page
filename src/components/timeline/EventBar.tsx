@@ -1,5 +1,3 @@
-import React from "react";
-
 interface Event {
   position: string;
   company_name: string;
