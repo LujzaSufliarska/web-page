@@ -8,29 +8,42 @@ export default function ExperiencePage() {
 
   const allExperiences = Object.values(t("positions", { returnObjects: true }));
 
-  const positionCardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const scrollToCard = (index: number) => {
-    positionCardRefs.current[index]?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+  // Change to use position names as keys instead of indices
+  const positionCardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  //   const scrollToCard = (positionName: number) => {
+  //     positionCardRefs.current[positionName]?.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "start",
+  //     });
+  //   };
+  const scrollToCard = (positionName: number) => {
+    const element = positionCardRefs.current[positionName];
+    if (element) {
+      const yOffset = -80; // Negative up, positive scrolls down
+      const y =
+        element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
     // TODO neresponzivne plus sirka zalezi od timelineu a neviem to fixnut
     // TODO nad timeline pridat filtre podla roku ze by sa to tam scrollo
-    // TODO language switch fail
     <div className="flex flex-col px-10 py-[20px] mt-[60px] items-center gap-2">
       <div className="text-h4 text-[var(--primary)]">My Journey</div>
       <div className="flex flex-col gap-4">
         <ExperienceTimeline onEventClick={scrollToCard} />
 
         <div className="flex flex-col gap-3 w-full">
-          {allExperiences.map((experience, index) => (
+          {allExperiences.map((experience) => (
             <div
-              key={index}
+              key={experience.position}
               ref={(el) => {
-                positionCardRefs.current[index] = el;
+                positionCardRefs.current[experience.position] = el;
               }}
             >
               <PositionCard

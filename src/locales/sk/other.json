@@ -4,5 +4,9 @@
         "negativeText": "Momentálne nehľadám prácu. Ale neváhajte ma kontaktovať!"
     },
     "showDescription": "zobraziť podrobnosti ▼",
-    "hideDescription": "zobraziť menej ▲"
+    "hideDescription": "zobraziť menej ▲",
+    "experienceTimeline": {
+        "header": "Interaktívna Časová Os",
+        "note": "(Pre viac detailov kliknite na niktorý blok)"
+    }
 }

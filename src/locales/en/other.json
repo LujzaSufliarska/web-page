@@ -5,5 +5,9 @@
         "negativeText": "Not looking for a job at the moment. But feel free to contact me!"
     },
     "showDescription": "show description ▼",
-    "hideDescription": "show less ▲"
+    "hideDescription": "show less ▲",
+    "experienceTimeline": {
+        "header": "Interactive Timeline",
+        "note": "(For more details click on some bars)"
+    }
 }

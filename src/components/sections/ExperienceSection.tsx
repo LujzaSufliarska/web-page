@@ -18,7 +18,6 @@ export default function ExperienceSection() {
       ns: "experience",
     }).toLowerCase();
 
-    // TODO language switch fail
     const sortedByEndDate = allExperiences
       .map((position) => {
         const [start, end] = position.period.split(" - ");

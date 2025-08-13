@@ -17,8 +17,8 @@ export default function ExperienceTimeline({
   onEventClick,
 }: ExperienceTimelineProps) {
   const { t } = useTranslation("experience");
-  const { t: t_other } = useTranslation("milestones");
-  const presentKeyword = t("key_for_period_end").toLowerCase();
+  const { t: t_mils } = useTranslation("milestones");
+  const { t: t_other } = useTranslation("other");
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -26,7 +26,7 @@ export default function ExperienceTimeline({
 
   const allExperiences = Object.values(t("positions", { returnObjects: true }));
   const allMilestones = Object.values(
-    t_other("milestones", { returnObjects: true })
+    t_mils("milestones", { returnObjects: true })
   );
   // sortnute neskor v assignpositiontolines in helper functions
   const allEvents = [...allExperiences, ...allMilestones];
@@ -51,7 +51,7 @@ export default function ExperienceTimeline({
   //     allExperiences,
   //     firstJobStart,
   //     durationMonths,
-  //     containerWidth
+  //     containerWidth*/
   //   );
   const positionsWithLines = assignPositionsToLines(
     allEvents,
@@ -59,8 +59,6 @@ export default function ExperienceTimeline({
     durationMonths,
     containerWidth
   );
-
-  //   console.log(positionsWithLines);
 
   const totalLines =
     Math.max(...positionsWithLines.map((p) => p.lineIndex)) + 1;
@@ -155,9 +153,11 @@ export default function ExperienceTimeline({
     <div className="p-4">
       {/* header */}
       <div className="text-default font-bold text-[var(--bcg-text)]">
-        Interactive Timeline ({startYear} - {endYear})
+        {t_other("experienceTimeline.header")} ({startYear} - {endYear})
       </div>
-      <div className="text-p2 text-[var(--bcg-text)]">(Hover over bars)</div>
+      <div className="text-p2 text-[var(--bcg-text)]">
+        {t_other("experienceTimeline.note")}
+      </div>
 
       {/* timeline */}
       <div
@@ -188,7 +188,7 @@ export default function ExperienceTimeline({
           {yearMarkers}
 
           {/* Events */}
-          {positionsWithLines.map((positionData, id) => {
+          {positionsWithLines.map((positionData) => {
             const { position, lineIndex, startPx, barWidth } = positionData;
             const tooltipPos = getTooltipPosition(
               mousePosition.x,
@@ -200,18 +200,18 @@ export default function ExperienceTimeline({
             return (
               <>
                 <EventBar
-                  id={id}
+                  id={position.position}
                   lineIndex={lineIndex}
                   left={startPx + containerWidth / durationMonths}
                   barWidth={barWidth}
                   event={position}
                   setHoveredBar={setHoveredBar}
                   color={color}
-                  onClickEvent={() => onEventClick(id)}
+                  onClickEvent={() => onEventClick(position.position)}
                 />
 
                 {/* Custom Event Tooltip */}
-                {hoveredBar === id && (
+                {hoveredBar === position.position && (
                   <div
                     className="absolute z-50 bg-gray-900 text-white rounded-lg p-2 shadow-xl transform -translate-x-1/2 pointer-events-none"
                     style={{

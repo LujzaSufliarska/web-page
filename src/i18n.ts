@@ -22,7 +22,7 @@ import skProjects from './locales/sk/projects.json';
 import skContact from './locales/sk/contact.json';
 import skFooter from './locales/sk/footer.json';
 import skOther from './locales/sk/other.json';
-import skMilestones from './locales/sk/other.json';
+import skMilestones from './locales/sk/milestones.json';
 
 const savedLanguage = localStorage.getItem('appLanguage') || 'en';
 

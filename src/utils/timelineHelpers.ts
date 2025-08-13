@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 export function parseDate(date: string): Date {
   const [month, year] = date.split(" ");
 
-  const months: { [key: string]: number } = {
+  const months: Record<string, number> = {
     // JS Date months are 0-indexed
     // English
     January: 0, February: 1, March: 2, April: 3, May: 4, June: 5,
@@ -17,6 +17,19 @@ export function parseDate(date: string): Date {
   return new Date(parseInt(year), months[month]);
 }
 
+// export function parseDate(date: string): Date {
+//   const [month, year] = date.split(" ");
+  
+//   const skMonths: Record<string, number> = {
+//     Január: 0, Február: 1, Marec: 2, Apríl: 3, Máj: 4, Jún: 5,
+//     Júl: 6, August: 7, September: 8, Október: 9, November: 10, December: 11
+//   };
+  
+//   return skMonths[month] !== undefined 
+//     ? new Date(parseInt(year), skMonths[month])
+//     : new Date(date); // fallback na štandardné parsovanie
+// }
+
 export function getFirstAndLastJobDates(positions: {
   period: string }[],
 ) {
@@ -28,6 +41,8 @@ export function getFirstAndLastJobDates(positions: {
 
   Object.values(positions).forEach(pos => {
     const [start, end] = pos.period.split(" - ");
+
+    console.log(start, end)
 
     startDates.push(parseDate(start));
     // endDates.push(end.toLowerCase() === t("key_for_period_end").toLowerCase() ? new Date() : parseDate(end));
@@ -94,6 +109,7 @@ export function assignPositionsToLines(
 ): PositionWithLine[] {
   const { t } = useTranslation("experience");
   const presentKeyword = t("key_for_period_end").toLowerCase()
+  const lg = localStorage.getItem("appLanguage");
 
   const result: PositionWithLine[] = [];
   const lines: LineOccupancy[] = [];
@@ -112,6 +128,8 @@ export function assignPositionsToLines(
     const eventEndDate = eventEnd.toLowerCase() === presentKeyword.toLowerCase()
       ? new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" })
       : eventEnd;
+
+    //new Date().toLocaleDateString((localStorage.getItem("appLanguage") === "en" ? "en-US" : "sk-US"), { year: "numeric", month: "long" })
 
     const startDate = parseDate(eventStartDate);
     const endDate = parseDate(eventEndDate);

@@ -21,8 +21,6 @@ function App() {
 
     // TODO add back button to the pages - experience, projects
     // TODO check whether project object cannot be enlarged
-    // TODO check navigation - maybe use axios so page would refersh when comming from other pages - experience, project
-    // ->      TODO when on page, going to project and going back images are not loaded -> after F5 they are
     // TODO projects page - filtrovanie podľa roku?
     // TODO pridat sekciu databazy, ikonu unity
     // TODO offset scroll downu na mobiloch z headera je priliz vysoky
@@ -31,9 +29,9 @@ function App() {
     // TODO z CV odstranit ISS program na ing je tam chyba
     // TODO v CV zmenit QR kod na webpage a aj link
 
-    // TODO language switch on experience page - nefunguje ani keď dám mesiac ukončenia miesto súčastnosť
+    // TODO refactor experiencepage.tsx, experiencetimeline.tsx, timelinehelpers.ts
 
-    // TODO change favicon (co to je?) and title of page shown in browser tab -- DONE
+    // TODO change favicon and title of page shown in browser tab -- DONE
     // TODO accessibility pre nevidiacich?
     // TODO na hero stranke zmenit na px-5 ako vsade ale ptm treba upravit poziciu banera. nevedela som jak na to tak som tam nechala px-10
   );
