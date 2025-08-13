@@ -28,6 +28,7 @@ function App() {
     // TODO pri hovery nech sa objavia podrobnosti o pracovnej pozicii na experience page
     // TODO z CV odstranit ISS program na ing je tam chyba
     // TODO v CV zmenit QR kod na webpage a aj link
+    // TODO stale nie je refresh po kliknuti
 
     // TODO refactor experiencepage.tsx, experiencetimeline.tsx, timelinehelpers.ts
 
