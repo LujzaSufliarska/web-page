@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import MainPage from "./views/MainPage";
 import ProjectsPage from "./views/ProjectsPage";
@@ -7,7 +7,7 @@ import "./i18n";
 
 function App() {
   return (
-    <BrowserRouter
+    <HashRouter
       basename={import.meta.env.MODE === "production" ? "/web-page" : "/"}
     >
       <Routes>
@@ -17,7 +17,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
 
     // M U S T  D O
     // TODO skusit setnut scale a nech sa len predlzuje ten pas timeline
