@@ -41,9 +41,9 @@ export default function Navbar() {
     const element = document.getElementById(id);
 
     if (location.pathname !== "/") {
-      // navigate(`/#${id}`);
-      window.location.href = `${window.location.pathname}#${id}`;
-      window.location.reload();
+      navigate(`/#${id}`);
+      // window.location.href = `${window.location.pathname}#${id}`; // does some shit with link
+      // window.location.reload(); // reload is performed afterscroll and page is on top  again
       // Wait a bit for the DOM to render before scrolling - element can be set to null now
       setTimeout(() => {
         const element = document.getElementById(id);
