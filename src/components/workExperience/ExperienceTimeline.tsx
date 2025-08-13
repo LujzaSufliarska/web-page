@@ -93,12 +93,12 @@ export default function ExperienceTimeline({
     );
   });
 
-  const yearMarkers = [...Array(Math.floor(durationMonths / 12) + 1)].map(
+  const yearMarkers = [...Array(Math.floor(durationMonths / 12) + 2)].map(
     (_, i) => {
       const year = startYear + i;
       const left =
         ((i * 12) / durationMonths) * containerWidth -
-        startMonth * (containerWidth / durationMonths);
+        (startMonth - 1) * (containerWidth / durationMonths);
 
       return <TimelineMarker id={year} left={left} label={year} type="year" />;
     }
