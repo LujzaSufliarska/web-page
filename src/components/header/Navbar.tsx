@@ -42,7 +42,7 @@ export default function Navbar() {
 
     if (location.pathname !== "/") {
       // navigate(`/#${id}`);
-      window.location.href = `/#${id}`;
+      window.location.href = `${window.location.pathname}#${id}`;
       // Wait a bit for the DOM to render before scrolling - element can be set to null now
       setTimeout(() => {
         const element = document.getElementById(id);
