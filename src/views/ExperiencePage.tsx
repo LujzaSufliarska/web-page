@@ -32,11 +32,11 @@ export default function ExperiencePage() {
   };
 
   return (
-    // TODO neresponzivne plus sirka zalezi od timelineu a neviem to fixnut
+    // TODO neresponzivne
     // TODO nad timeline pridat filtre podla roku ze by sa to tam scrollo
     <div className="flex flex-col px-10 py-[20px] mt-[60px] items-center gap-2">
       {/* <IoArrowBack /> */}
-      <div className="text-h4 text-[var(--primary)]">My Journey</div>
+      <div className="text-h4 text-[var(--primary)]">{t("section2")}</div>
       <div className="flex flex-col gap-4">
         <ExperienceTimeline onEventClick={scrollToCard} />
 

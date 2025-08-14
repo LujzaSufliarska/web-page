@@ -20,8 +20,7 @@ function App() {
     </HashRouter>
 
     // M U S T  D O
-    // TODO skusit setnut scale a nech sa len predlzuje ten pas timeline
-    // TODO stale nie je refresh po kliknuti na timeline block - obrazky sa nenacitavaju
+    // TODO stale nie je refresh po kliknuti na timeline block - obrazky sa nenacitavaju - used hash router a funguje asi
 
     // N I C E  T O  D O
     // TODO offset scroll downu na mobiloch z headera je priliz vysoky

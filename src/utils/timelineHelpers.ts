@@ -42,8 +42,6 @@ export function getFirstAndLastJobDates(positions: {
   Object.values(positions).forEach(pos => {
     const [start, end] = pos.period.split(" - ");
 
-    console.log(start, end)
-
     startDates.push(parseDate(start));
     // endDates.push(end.toLowerCase() === t("key_for_period_end").toLowerCase() ? new Date() : parseDate(end));
     endDates.push(end.toLowerCase() === presentKeyword.toLowerCase() ? new Date() : parseDate(end));
@@ -58,14 +56,14 @@ export function getFirstAndLastJobDates(positions: {
 
 
 // old not used. usable when i want to show timeline in years only but it was not visually accurate
-export function getPositionYear(date: string, containerWidth: number, start: number, duration: number): number {
+export function getPositionYear(date: string, minBarWidth: number, start: number, duration: number): number {
   const year = parseDate(date).getFullYear();
   const ratio = (year - start) / duration;
 
-  return ratio * containerWidth;
+  return ratio * minBarWidth;
 }
 
-export function getPosition(eventDate: string, containerWidth: number, firstJobStartDate: Date, totalMonths: number, includeMonth = false): number {
+export function getPosition(eventDate: string, minBarWidth: number, firstJobStartDate: Date, totalMonths: number, includeMonth = false): number {
   const targetDate = parseDate(eventDate);
 
   if (includeMonth) {
@@ -79,7 +77,7 @@ export function getPosition(eventDate: string, containerWidth: number, firstJobS
 
   const ratio = monthsFromStart / totalMonths;
 
-  return ratio * containerWidth;
+  return monthsFromStart * minBarWidth;
 }
 
 
@@ -105,7 +103,7 @@ export function assignPositionsToLines(
   positions: any[],
   firstJobStart: Date,
   durationMonths: number,
-  containerWidth: number
+  minBarWidth: number
 ): PositionWithLine[] {
   const { t } = useTranslation("experience");
   const presentKeyword = t("key_for_period_end").toLowerCase()
@@ -134,9 +132,9 @@ export function assignPositionsToLines(
     const startDate = parseDate(eventStartDate);
     const endDate = parseDate(eventEndDate);
     
-    const startPx = getPosition(eventStartDate, containerWidth, firstJobStart, durationMonths);
-    const endPx = getPosition(eventEndDate, containerWidth, firstJobStart, durationMonths, true);
-    const barWidth = Math.max(endPx - startPx, 4);
+    const startPx = getPosition(eventStartDate, minBarWidth, firstJobStart, durationMonths);
+    const endPx = getPosition(eventEndDate, minBarWidth, firstJobStart, durationMonths, true);
+    const barWidth = Math.max(endPx - startPx, minBarWidth);
 
     // Find a suitable line for this position
     let assignedLineIndex = findSuitableLine(lines, startDate, endDate, startPx, endPx);

@@ -22,7 +22,7 @@ export default function ExperienceTimeline({
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const containerWidth = 1300; // TODO Adjust accordingly to viewport
+  const pxPerMonth = 25;
 
   const allExperiences = Object.values(t("positions", { returnObjects: true }));
   const allMilestones = Object.values(
@@ -41,6 +41,8 @@ export default function ExperienceTimeline({
 
   const durationMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
 
+  const containerWidth = durationMonths * pxPerMonth;
+
   const [hoveredBar, setHoveredBar] = useState<number | null>(null);
   const [mousePosition, setMousePosition] = useState<{ x: number; y: number }>({
     x: 0,
@@ -57,7 +59,7 @@ export default function ExperienceTimeline({
     allEvents,
     firstJobStart,
     durationMonths,
-    containerWidth
+    pxPerMonth
   );
 
   const totalLines =
@@ -81,7 +83,7 @@ export default function ExperienceTimeline({
     );
     const year = date.getFullYear(); //startMonth + i -> date roll over into a different year 12 is jan
 
-    const left = (i / durationMonths) * containerWidth;
+    const left = i * pxPerMonth;
 
     return (
       <TimelineMarker
@@ -96,9 +98,7 @@ export default function ExperienceTimeline({
   const yearMarkers = [...Array(Math.floor(durationMonths / 12) + 2)].map(
     (_, i) => {
       const year = startYear + i;
-      const left =
-        ((i * 12) / durationMonths) * containerWidth -
-        (startMonth - 1) * (containerWidth / durationMonths);
+      const left = i * 12 * pxPerMonth - (startMonth - 1) * pxPerMonth;
 
       return <TimelineMarker id={year} left={left} label={year} type="year" />;
     }
@@ -150,7 +150,7 @@ export default function ExperienceTimeline({
   };
 
   return (
-    <div className="p-4">
+    <div className="py-4">
       {/* header */}
       <div className="text-default font-bold text-[var(--bcg-text)]">
         {t_other("experienceTimeline.header")} ({startYear} - {endYear})
@@ -168,8 +168,6 @@ export default function ExperienceTimeline({
         <div
           className="relative h-45"
           style={{
-            width: containerWidth,
-            minWidth: containerWidth,
             height: 45 + totalLines * 30 + 75, // 75 buffer na citanie
           }}
         >
