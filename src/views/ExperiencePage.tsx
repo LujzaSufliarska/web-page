@@ -36,7 +36,9 @@ export default function ExperiencePage() {
     // TODO nad timeline pridat filtre podla roku ze by sa to tam scrollo
     <div className="flex flex-col w-full py-[20px] mt-[60px] gap-2">
       {/* <IoArrowBack /> */}
-      <div className="text-h4 text-[var(--primary)]">{t("section2")}</div>
+      <div className="text-h4 text-[var(--primary)] text-center">
+        {t("section2")}
+      </div>
       <div className="flex flex-col gap-4">
         <ExperienceTimeline onEventClick={scrollToCard} />
 
