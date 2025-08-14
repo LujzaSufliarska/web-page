@@ -7,9 +7,7 @@ import "./i18n";
 
 function App() {
   return (
-    <HashRouter
-      basename={import.meta.env.MODE === "production" ? "/web-page" : ""}
-    >
+    <HashRouter>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />
