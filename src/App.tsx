@@ -19,12 +19,14 @@ function App() {
 
     // M U S T  D O
     // TODO stale nie je refresh po kliknuti na timeline block - obrazky sa nenacitavaju - used hash router a funguje asi
+    // TODO urobit about tie tooly automaticke - load z jsomnu cez forcyklus jak keby (map)
 
     // N I C E  T O  D O
     // TODO offset scroll downu na mobiloch z headera je priliz vysoky
     // TODO add back button to the pages - experience, projects
     // TODO projects page - filtrovanie podľa roku?
     // TODO refactor experiencepage.tsx, experiencetimeline.tsx, timelinehelpers.ts
+    // TODO CV - schopnosti header ma cez seba hentu ciaru, oracle SQL developer slovo developer zacina malym a tak isto aj slovo skusenosti vo volnocasovych, prelozit reporting specialist a zmenit to na support plus nazvy poziici dat zaciatocnym velkym
 
     // D O E S  N O T  M A T T E R
     // TODO pridat sekciu databazy

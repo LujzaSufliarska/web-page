@@ -43,13 +43,12 @@ export default function AboutSection() {
         <SectionHeader>{t("title2")}</SectionHeader>
 
         {/* TODO tie allignmenty responzivne sa mi nepacia... */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 w-full text-[var(--bcg-text)] xs:justify-items-center sm:justify-items-stretch xs:text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full text-[var(--bcg-text)] xs:justify-items-center sm:justify-items-stretch xs:text-center sm:text-left">
           <div className="flex flex-col gap-1">
             <p className="font-bold text-h5">{t("header1")}</p>
             <ul className="text-p1">
               <li>Python</li>
               <li>Java</li>
-              <li>PostgreSQL</li>
               <li>HTML</li>
               <li>CSS</li>
               <li>Tailwind</li>
@@ -61,6 +60,16 @@ export default function AboutSection() {
           <div className="flex flex-col gap-1">
             <p className="font-bold text-h5">{t("header2")}</p>
             <ul className="text-p1">
+              <li>PostgreSQL</li>
+              <li>Oracle SQL Developer</li>
+              <li>SQL Server Management Studio</li>
+              <li>Power BI</li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-1">
+            <p className="font-bold text-h5">{t("header3")}</p>
+            <ul className="text-p1">
               <li>Figma</li>
               <li>Axure</li>
               <li>Adobe Photoshop</li>
@@ -69,7 +78,7 @@ export default function AboutSection() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <p className="font-bold text-h5">{t("header3")}</p>
+            <p className="font-bold text-h5">{t("header4")}</p>
             <ul className="text-p1">
               <li>GitHub</li>
               <li>Git</li>
@@ -78,13 +87,10 @@ export default function AboutSection() {
           </div>
 
           <div className="flex flex-col gap-1">
-            <p className="font-bold text-h5">{t("header4")}</p>
+            <p className="font-bold text-h5">{t("header5")}</p>
             <ul className="text-p1">
               <li>Adobe PremierePro</li>
               <li>Microsoft Office</li>
-              <li>Oracle SQL Developer</li>
-              <li>SQL Server Management Studio</li>
-              <li>Power BI</li>
             </ul>
           </div>
         </div>

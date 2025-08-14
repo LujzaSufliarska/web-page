@@ -34,7 +34,7 @@ export default function ExperiencePage() {
   return (
     // TODO neresponzivne
     // TODO nad timeline pridat filtre podla roku ze by sa to tam scrollo
-    <div className="flex flex-col px-10 py-[20px] mt-[60px] items-center gap-2">
+    <div className="flex flex-col w-full py-[20px] mt-[60px] gap-2">
       {/* <IoArrowBack /> */}
       <div className="text-h4 text-[var(--primary)]">{t("section2")}</div>
       <div className="flex flex-col gap-4">

@@ -29,7 +29,6 @@ export default function EventBar(props: Props) {
   } = props;
 
   return (
-    // TODO if blue then dont allow click a este pozri tie indexy lebo to nefunguje spravne ten scroll na miesto
     <div
       key={id}
       className="absolute rounded px-2 text-white overflow-hidden text-ellipsis

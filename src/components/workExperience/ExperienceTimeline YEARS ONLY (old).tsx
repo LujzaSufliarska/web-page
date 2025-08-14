@@ -9,7 +9,7 @@ export default function ExperienceTimeline() {
   const { t } = useTranslation("experience");
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const containerWidth = 1300; // TODO Adjust accordingly to viewport
+  const containerWidth = 1300; // Adjust accordingly to viewport
   const allExperiences = Object.values(t("positions", { returnObjects: true }));
 
   const { firstJobStart, lastJobEnd } = getFirstAndLastJobDates(allExperiences);
@@ -49,7 +49,6 @@ export default function ExperienceTimeline() {
             const left = ((year - startYear) / duration) * containerWidth;
 
             return (
-              // TODO z tohto mozem urobit aj komponent
               <div key={year} style={{ position: "absolute", left }}>
                 <div className="w-px h-4 bg-gray-400 mb-1" />{" "}
                 <div className="text-xs text-gray-600">{year}</div>
