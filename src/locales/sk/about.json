@@ -5,9 +5,11 @@
     "text2": "Vo voľnom čase sa rada venujem grafickej tvorbe, tvorbe videí, cestovaniu a spoznávaniu iných krajín a kultúr, spoločenským hrám a športom. Tiež rada skladám rôzne typy Rubikových kociek! A keď si chcem oddýchnuť alebo sa sústrediť, nič nenahradí počúvanie drum and bass hudby – môjho obľúbeného žánru.",
 
     "title2": "Schopnosti",
-    "header1": "Vývoj",
-    "header2": "Dáta",
-    "header3": "Design",
-    "header4": "Nástroje",
-    "header5": "Iné"
+    "skills": {
+        "Vývoj": ["Python", "Java", "HTML", "CSS", "Tailwind", "Unity"],
+        "Dáta": ["PostgreSQL", "Oracle SQL Developer", "SQL Server Management Studio", "Power BI"],
+        "Dizajn": ["Figma", "Axure", "Adobe Photoshop", "Adobe Illustrator"],
+        "Nástroje": ["GitHub", "Git", "Jira"],
+        "Iné": ["Adobe PremierePro", "Microsoft Office"]
+    }
 }

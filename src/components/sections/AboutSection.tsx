@@ -4,9 +4,17 @@ import SectionHeader from "../highlight/SectionHeader";
 import { useTheme } from "../../context/theme-context";
 import { useTranslation, Trans } from "react-i18next";
 
+type Skills = {
+  [category: string]: string[];
+};
+
 export default function AboutSection() {
   const { t } = useTranslation(["about", "navbar"]);
   const { theme } = useTheme(); // condition for dark icons
+
+  const allSkills = Object.entries(
+    t("skills", { returnObjects: true }) as Skills
+  );
 
   return (
     <div className="flex flex-col px-5 items-center gap-5">
@@ -44,55 +52,16 @@ export default function AboutSection() {
 
         {/* TODO tie allignmenty responzivne sa mi nepacia... */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full text-[var(--bcg-text)] xs:justify-items-center sm:justify-items-stretch xs:text-center sm:text-left">
-          <div className="flex flex-col gap-1">
-            <p className="font-bold text-h5">{t("header1")}</p>
-            <ul className="text-p1">
-              <li>Python</li>
-              <li>Java</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>Tailwind</li>
-              <li>Unity</li>
-              {/* <li>TypeScript</li> */}
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <p className="font-bold text-h5">{t("header2")}</p>
-            <ul className="text-p1">
-              <li>PostgreSQL</li>
-              <li>Oracle SQL Developer</li>
-              <li>SQL Server Management Studio</li>
-              <li>Power BI</li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <p className="font-bold text-h5">{t("header3")}</p>
-            <ul className="text-p1">
-              <li>Figma</li>
-              <li>Axure</li>
-              <li>Adobe Photoshop</li>
-              <li>Adobe Illustrator</li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <p className="font-bold text-h5">{t("header4")}</p>
-            <ul className="text-p1">
-              <li>GitHub</li>
-              <li>Git</li>
-              <li>Jira</li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <p className="font-bold text-h5">{t("header5")}</p>
-            <ul className="text-p1">
-              <li>Adobe PremierePro</li>
-              <li>Microsoft Office</li>
-            </ul>
-          </div>
+          {allSkills.map(([skillSetName, skills]) => (
+            <div className="flex flex-col gap-1">
+              <p className="font-bold text-h5">{skillSetName}</p>
+              <ul className="text-p1">
+                {skills.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-wrap px-wrapper py-default w-full justify-evenly gap-3">

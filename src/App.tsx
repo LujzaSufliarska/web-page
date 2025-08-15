@@ -8,6 +8,10 @@ import "./i18n";
 function App() {
   return (
     <HashRouter>
+      {/* HashRouter Ensures refresh on redirect */}
+      {/* <BrowserRouter
+      basename={import.meta.env.MODE === "production" ? "/web-page" : "/"}
+    > */}
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />
@@ -18,8 +22,7 @@ function App() {
     </HashRouter>
 
     // M U S T  D O
-    // TODO stale nie je refresh po kliknuti na timeline block - obrazky sa nenacitavaju - used hash router a funguje asi
-    // TODO urobit about tie tooly automaticke - load z jsomnu cez forcyklus jak keby (map)
+    // TODO urobit about tie tooly automaticke - load z jsonu cez forcyklus jak keby (map)
 
     // N I C E  T O  D O
     // TODO offset scroll downu na mobiloch z headera je priliz vysoky
