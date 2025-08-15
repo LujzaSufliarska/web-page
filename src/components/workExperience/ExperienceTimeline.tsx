@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { TimelineMarker } from "../timeline/TimelineMarker";
 import EventBar from "../timeline/EventBar";
 import i18n from "../../i18n";
-import YearFilter from "./yearFilter";
+import YearFilter from "./YearFilter";
 
 interface ExperienceTimelineProps {
   onEventClick: (id: number) => void;
