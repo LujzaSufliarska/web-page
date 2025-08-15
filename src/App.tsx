@@ -31,8 +31,7 @@ function App() {
     // TODO CV - schopnosti header ma cez seba hentu ciaru, oracle SQL developer slovo developer zacina malym a tak isto aj slovo skusenosti vo volnocasovych, prelozit reporting specialist a zmenit to na support plus nazvy poziici dat zaciatocnym velkym
 
     // D O E S  N O T  M A T T E R
-    // TODO pridat sekciu databazy
-    // TODO pri hovery nech sa objavia podrobnosti o pracovnej pozicii na experience page
+    // TODO pri hovery nech sa objavia podrobnosti o pracovnej pozicii na experience page?
     // TODO change favicon?
     // TODO accessibility pre nevidiacich?
     // TODO na hero stranke zmenit na px-5 ako vsade ale ptm treba upravit poziciu banera. nevedela som jak na to tak som tam nechala px-10
