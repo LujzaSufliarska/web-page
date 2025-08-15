@@ -22,7 +22,7 @@ function App() {
     </HashRouter>
 
     // M U S T  D O
-    // TODO urobit about tie tooly automaticke - load z jsonu cez forcyklus jak keby (map)
+    // TODO after refresh save light mode
 
     // N I C E  T O  D O
     // TODO offset scroll downu na mobiloch z headera je priliz vysoky
