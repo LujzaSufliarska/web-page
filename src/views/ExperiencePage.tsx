@@ -11,6 +11,7 @@ export default function ExperiencePage() {
 
   // Change to use position names as keys instead of indices
   const positionCardRefs = useRef<Record<string, HTMLDivElement | null>>({});
+
   //   const scrollToCard = (positionName: number) => {
   //     positionCardRefs.current[positionName]?.scrollIntoView({
   //       behavior: "smooth",
@@ -32,7 +33,6 @@ export default function ExperiencePage() {
   };
 
   return (
-    // TODO nad timeline pridat filtre podla roku ze by sa to tam scrollo
     <div className="flex flex-col w-full py-[20px] mt-[60px] gap-2">
       {/* <IoArrowBack /> */}
       <div className="text-h4 text-[var(--primary)] text-center">

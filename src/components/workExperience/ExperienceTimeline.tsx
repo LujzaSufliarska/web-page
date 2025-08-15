@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { TimelineMarker } from "../timeline/TimelineMarker";
 import EventBar from "../timeline/EventBar";
 import i18n from "../../i18n";
+import YearFilter from "./yearFilter";
 
 interface ExperienceTimelineProps {
   onEventClick: (id: number) => void;
@@ -40,6 +41,7 @@ export default function ExperienceTimeline({
   const endMonth = lastJobEnd.getMonth();
 
   const durationMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
+  const yearsCount = Math.floor(durationMonths / 12) + 2; // TODO +1 ked zacina nieco pred rokom 2021 inak to prida 2026 aj ked este neni
 
   const containerWidth = durationMonths * pxPerMonth;
 
@@ -65,14 +67,6 @@ export default function ExperienceTimeline({
   const totalLines =
     Math.max(...positionsWithLines.map((p) => p.lineIndex)) + 1;
 
-  // Scroll to show the right side (present jobs)
-  useEffect(() => {
-    if (scrollContainerRef.current && containerWidth > 0) {
-      const scrollContainer = scrollContainerRef.current;
-      scrollContainer.scrollLeft = scrollContainer.scrollWidth;
-    }
-  }, []);
-
   const monthMarkers = [...Array(durationMonths + 3)].map((_, i) => {
     const date = new Date(startYear, startMonth - 1 + i, 1); // i want one month before first event on the timeline
     const monthShort = date.toLocaleString(
@@ -95,14 +89,12 @@ export default function ExperienceTimeline({
     );
   });
 
-  const yearMarkers = [...Array(Math.floor(durationMonths / 12) + 2)].map(
-    (_, i) => {
-      const year = startYear + i;
-      const left = i * 12 * pxPerMonth - (startMonth - 1) * pxPerMonth;
+  const yearMarkers = [...Array(yearsCount)].map((_, i) => {
+    const year = startYear + i;
+    const left = i * 12 * pxPerMonth - (startMonth - 1) * pxPerMonth;
 
-      return <TimelineMarker id={year} left={left} label={year} type="year" />;
-    }
-  );
+    return <TimelineMarker id={year} left={left} label={year} type="year" />;
+  });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = scrollContainerRef.current?.getBoundingClientRect();
@@ -149,14 +141,43 @@ export default function ExperienceTimeline({
     return { x, y };
   };
 
+  const handleYearChange = (year: number) => {
+    // Scroll to the starting position of that year
+    if (scrollContainerRef.current && containerWidth > 0) {
+      const monthsFromStart = (year - startYear) * 12 - startMonth + 1; // +1 so the year is on the edge
+      const scrollTo = monthsFromStart * pxPerMonth;
+
+      scrollContainerRef.current.scrollTo({
+        left: scrollTo,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // Scroll to show the right side (present jobs)
+  useEffect(() => {
+    if (scrollContainerRef.current && containerWidth > 0) {
+      const scrollContainer = scrollContainerRef.current;
+      scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+    }
+  }, []);
+
   return (
     <div className="py-4">
       {/* header */}
       <div className="text-default font-bold text-[var(--bcg-text)]">
         {t_other("experienceTimeline.header")} ({startYear} - {endYear})
       </div>
-      <div className="text-p2 text-[var(--bcg-text)]">
-        {t_other("experienceTimeline.note")}
+
+      <div className="flex items-center justify-between mb-2">
+        <div className="text-p2 text-[var(--bcg-text)]">
+          {t_other("experienceTimeline.note")}
+        </div>
+        <YearFilter
+          startYear={startYear}
+          length={yearsCount}
+          onYearChange={handleYearChange}
+        />
       </div>
 
       {/* timeline */}
