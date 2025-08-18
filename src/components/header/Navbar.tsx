@@ -19,13 +19,6 @@ export default function Navbar() {
 
   const [showMenu, setShowMenu] = useState(false);
 
-  const getInitials = (name: string) => {
-    return name
-      .split(" ")
-      .map((word) => word[0].toUpperCase())
-      .join("");
-  };
-
   const sections = t("sections", { returnObjects: true }) as Record<
     string,
     string
@@ -38,37 +31,32 @@ export default function Navbar() {
   };
 
   const handleLinkClick = (id: string) => {
-    const element = document.getElementById(id);
+    const scrollToElement = () => {
+      const element = document.getElementById(id);
+
+      if (!element) return;
+
+      const header = document.querySelector("nav");
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top: elementPosition - headerHeight,
+        behavior: "smooth",
+      });
+    };
 
     if (location.pathname !== "/") {
       navigate(`/#${id}`);
       // window.location.href = `${window.location.pathname}#${id}`; // does some shit with link
       // window.location.reload(); // reload is performed afterscroll and page is on top  again
-      // Wait a bit for the DOM to render before scrolling - element can be set to null now
-      setTimeout(() => {
-        const element = document.getElementById(id);
 
-        if (element) {
-          const elementPosition =
-            element.getBoundingClientRect().top + window.pageYOffset;
-          const offset = 70;
-
-          window.scrollTo({
-            top: elementPosition - offset,
-            behavior: "smooth",
-          });
-        }
-      }, 100);
-    } else if (element) {
-      const elementPosition =
-        element.getBoundingClientRect().top + window.pageYOffset;
-      const offset = 70;
-
-      // element.scrollIntoView({ behavior: "smooth" });
-      window.scrollTo({
-        top: elementPosition - offset,
-        behavior: "smooth",
-      });
+      // wait for navigation + DOM render
+      setTimeout(scrollToElement, 0);
+    } else {
+      scrollToElement();
     }
   };
 
@@ -166,10 +154,9 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* TODO menu opens only on top of the screen - i could also just delete useEffect which makes the page not scrollable */}
       {/* Full-screen Mobile SIDE MENU */}
       {showMenu && (
-        <div className="w-full h-full top-0 left-0 px-sm_screen md:px-md_screen lg:px-lg_screen py-big bg-[var(--bcg)] text-[var(--bcg-text)] text-default flex flex-col gap-3">
+        <div className="fixed w-full h-full top-0 left-0 px-sm_screen md:px-md_screen lg:px-lg_screen py-big bg-[var(--bcg)] text-[var(--bcg-text)] text-default flex flex-col gap-3 z-[998]">
           <div className="flex flex-col gap-1">
             {/* is === section "header" in json (the first part with : ) */}
             {Object.entries(sections).map(([id, label]) => (
