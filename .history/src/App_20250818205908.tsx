@@ -30,6 +30,7 @@ function App() {
 
     // D O E S  N O T  M A T T E R
     // TODO pri hovery nech sa objavia podrobnosti o pracovnej pozicii na experience page?
+    // TODO change favicon?
     // TODO accessibility pre nevidiacich?
     // TODO na hero stranke zmenit na px-5 ako vsade ale ptm treba upravit poziciu banera. nevedela som jak na to tak som tam nechala px-10
   );

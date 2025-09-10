@@ -12,10 +12,12 @@ import YearFilter from "./YearFilter";
 
 interface ExperienceTimelineProps {
   onEventClick: (id: number) => void;
+  visible: boolean;
 }
 
 export default function ExperienceTimeline({
   onEventClick,
+  visible,
 }: ExperienceTimelineProps) {
   const { t } = useTranslation("experience");
   const { t: t_mils } = useTranslation("milestones");
@@ -40,7 +42,7 @@ export default function ExperienceTimeline({
   const endMonth = lastJobEnd.getMonth();
 
   const durationMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
-  const yearsCount = Math.floor(durationMonths / 12) + 2; // TODO +1 ked zacina nieco pred rokom 2021 inak to prida 2026 aj ked este neni
+  const yearsCount = Math.floor(durationMonths / 12) + 1; // TODO +1 ked zacina nieco pred rokom 2021 inak to prida 2026 aj ked este neni,; pobodne +2 dunno uvidime ako to pojde vekom
 
   // const pxPerMonth = Math.max(
   //   25,
@@ -195,16 +197,18 @@ export default function ExperienceTimeline({
   }, [containerWidth]);
 
   return (
-    <div className="py-4">
+    <div className="py-4 w-full">
       {/* header */}
       <div className="text-default font-bold text-[var(--bcg-text)]">
         {t_other("experienceTimeline.header")} ({startYear} - {endYear})
       </div>
 
       <div className="flex items-center justify-between mb-2">
-        <div className="text-p2 text-[var(--bcg-text)]">
-          {t_other("experienceTimeline.note")}
-        </div>
+        {visible && (
+          <div className="text-p2 text-[var(--bcg-text)]">
+            {t_other("experienceTimeline.note")}
+          </div>
+        )}
         <YearFilter
           startYear={startYear}
           length={yearsCount}

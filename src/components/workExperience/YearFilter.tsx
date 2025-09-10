@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   startYear: number;
@@ -7,6 +8,8 @@ type Props = {
 };
 
 export default function YearFilter(props: Props) {
+  const { t: t_other } = useTranslation("other");
+
   const years = Array.from(
     { length: props.length },
     (_, i) => props.startYear + i
@@ -14,7 +17,9 @@ export default function YearFilter(props: Props) {
 
   return (
     <div className="flex gap-1 justify-end text-p1">
-      <p className="text-[var(--bcg-text)]">Scroll timeline to</p>
+      <p className="text-[var(--bcg-text)]">
+        {t_other("experienceTimeline.scrollText")}
+      </p>
       <select
         className="text-[var(--bcg-text)]"
         defaultValue={years[0]}

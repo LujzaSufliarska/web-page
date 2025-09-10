@@ -39,7 +39,7 @@ export default function ExperiencePage() {
         {t("section2")}
       </div>
       <div className="flex flex-col gap-4">
-        <ExperienceTimeline onEventClick={scrollToCard} />
+        <ExperienceTimeline onEventClick={scrollToCard} visible={true} />
 
         <div className="flex flex-col gap-3 w-full">
           {allExperiences.map((experience) => (

@@ -5,6 +5,7 @@ import Button from "../button/Button";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { parseDate } from "../../utils/timelineHelpers";
+import ExperienceTimeline from "../workExperience/ExperienceTimeline";
 
 export default function ExperienceSection() {
   const { t } = useTranslation(["experience", "navbar"]);
@@ -43,6 +44,8 @@ export default function ExperienceSection() {
         {/* {t("sections.experience", { ns: "navbar" })} */}
         {t("section")}
       </SectionHeader>
+
+      <ExperienceTimeline onEventClick={() => {}} visible={false} />
 
       <div className="flex flex-col gap-3 w-full">
         {latestExperiences.map((experience, index) => (
