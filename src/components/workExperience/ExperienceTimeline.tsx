@@ -22,8 +22,7 @@ export default function ExperienceTimeline({
   const { t: t_other } = useTranslation("other");
 
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const pxPerMonth = 25;
+  // console.log(scrollContainerRef.current?.clientWidth);
 
   const allExperiences = Object.values(t("positions", { returnObjects: true }));
   const allMilestones = Object.values(
@@ -42,6 +41,30 @@ export default function ExperienceTimeline({
 
   const durationMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
   const yearsCount = Math.floor(durationMonths / 12) + 2; // TODO +1 ked zacina nieco pred rokom 2021 inak to prida 2026 aj ked este neni
+
+  // const pxPerMonth = Math.max(
+  //   25,
+  //   scrollContainerRef.current?.clientWidth / durationMonths
+  // );
+  const [pxPerMonth, setPxPerMonth] = useState(25);
+
+  useEffect(() => {
+    const updatePxPerMonth = () => {
+      if (scrollContainerRef.current) {
+        const viewportWidth = scrollContainerRef.current.clientWidth;
+        const minPxPerMonth = 25;
+
+        // Calculate what spacing would fit the viewport
+        const viewportBasedSpacing = viewportWidth / durationMonths;
+
+        setPxPerMonth(Math.max(minPxPerMonth, viewportBasedSpacing - 4));
+      }
+    };
+
+    updatePxPerMonth();
+    window.addEventListener("resize", updatePxPerMonth);
+    return () => window.removeEventListener("resize", updatePxPerMonth);
+  }, [durationMonths]);
 
   const containerWidth = durationMonths * pxPerMonth;
 
@@ -155,12 +178,21 @@ export default function ExperienceTimeline({
   };
 
   // Scroll to show the right side (present jobs)
+  // useEffect(() => {
+  //   if (scrollContainerRef.current && containerWidth > 0) {
+  //     const scrollContainer = scrollContainerRef.current;
+  //     scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+  //   }
+  // }, []);
   useEffect(() => {
     if (scrollContainerRef.current && containerWidth > 0) {
       const scrollContainer = scrollContainerRef.current;
-      scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+      // Only auto-scroll if the content is wider than the viewport
+      if (containerWidth > scrollContainer.clientWidth) {
+        scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+      }
     }
-  }, []);
+  }, [containerWidth]);
 
   return (
     <div className="py-4">
