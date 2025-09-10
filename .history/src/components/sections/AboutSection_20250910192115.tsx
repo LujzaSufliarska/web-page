@@ -53,7 +53,7 @@ export default function AboutSection() {
         {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full text-[var(--bcg-text)] xs:justify-items-center sm:justify-items-stretch xs:text-center sm:text-left"> */}
         <div className="flex flex-wrap gap-8 w-full text-[var(--bcg-text)] justify-evenly">
           {allSkills.map(([skillSetName, skills]) => (
-            <div className="flex flex-col gap-1 xs:min-w-[50%] sm:min-w-0 text-center">
+            <div className="flex flex-col gap-1 xs:min-w-[50%] sm:min-w-0 border-solid border-2 border-[var(--primary)] rounded p-2 text-center">
               <p className="font-bold text-h5">{skillSetName}</p>
               {/* <ul className="list-disc text-p1 px-4"> */}
               <ul className="text-p1">

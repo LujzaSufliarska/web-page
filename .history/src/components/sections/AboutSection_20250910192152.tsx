@@ -54,7 +54,9 @@ export default function AboutSection() {
         <div className="flex flex-wrap gap-8 w-full text-[var(--bcg-text)] justify-evenly">
           {allSkills.map(([skillSetName, skills]) => (
             <div className="flex flex-col gap-1 xs:min-w-[50%] sm:min-w-0 text-center">
-              <p className="font-bold text-h5">{skillSetName}</p>
+              <p className="font-bold text-h5 text-[var(--primary)]">
+                {skillSetName}
+              </p>
               {/* <ul className="list-disc text-p1 px-4"> */}
               <ul className="text-p1">
                 {skills.map((skill) => (
