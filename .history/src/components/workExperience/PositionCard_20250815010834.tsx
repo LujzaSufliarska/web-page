@@ -56,13 +56,11 @@ export default function PositionCard(props: Props) {
         )}
 
         {/* CHIPS */}
-        {props.attributes != "" && (
-          <div className="flex flex-wrap gap-default">
-            {props.attributes.split(",").map((attr, index) => (
-              <Chip key={index} text={attr.trim()} />
-            ))}
-          </div>
-        )}
+        <div className="flex flex-wrap gap-default">
+          {props.attributes.split(",").map((attr, index) => (
+            <Chip key={index} text={attr.trim()} />
+          ))}
+        </div>
       </div>
     </div>
   );
