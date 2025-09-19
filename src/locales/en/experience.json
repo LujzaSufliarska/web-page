@@ -4,6 +4,16 @@
     "key_for_period_end": "present",
     "button": "My Full Experience",
     "positions": {
+        "fiit1": {
+            "position": "Teacher Assistant",
+            "period": "September 2025 - present",
+            "company_name": "FIIT STU",
+            "company_location": "On-site (Bratislava, Slovakia)",
+            "company_type": "Part-time",
+            "job_sector": "Education",
+            "description": "Conducting exercises in the course Principles of Computer Engineering during the winter semester of the academic year 2025/2026",
+            "attributes": ""
+        },
         "mbank2": {
             "position": "Reporting Support",
             "period": "July 2025 - present",

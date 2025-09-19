@@ -4,6 +4,16 @@
     "key_for_period_end": "súčasnosť",
     "button": "Všetky moje skúsenosti",
     "positions": {
+        "fiit1": {
+            "position": "Asistent výučby (cvičiaci)",
+            "period": "September 2025 - súčasnosť",
+            "company_name": "FIIT STU",
+            "company_location": "Prezenčne (Bratislava, Slovakia)",
+            "company_type": "Part-time",
+            "job_sector": "Vzdelávanie",
+            "description": "Vedenie cvičení v predmete Princípy počítačového inžinierstva počas zimného semestra akademického roka 2025/2026",
+            "attributes": ""
+        },
         "mbank2": {
             "position": "Podpora na Reportingu",
             "period": "Júl 2025 - súčasnosť",
