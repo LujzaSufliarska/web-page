@@ -42,7 +42,7 @@ export default function ExperienceTimeline({
   const endMonth = lastJobEnd.getMonth();
 
   const durationMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
-  const yearsCount = Math.ceil(durationMonths / 12) + 1; // TODO +1 ked zacina nieco pred rokom 2021 inak to prida 2026 aj ked este neni,; pobodne +2 dunno uvidime ako to pojde vekom; predtym bolo floor ale zaciatkom roka (februar) tam nechcelo ukazat 2026 - zmenene na ceil
+  const yearsCount = Math.ceil(durationMonths / 12) + 1; // TODO +1 ked zacina nieco pred rokom 2021 inak to prida 2026 aj ked este neni,; pobodne +2 dunno uvidime ako to pojde vekom; predtym bolo floor ale zaciatkom roka (februar) tam nechcelo ukazat 2026
 
   // const pxPerMonth = Math.max(
   //   25,

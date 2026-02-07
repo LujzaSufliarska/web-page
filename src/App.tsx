@@ -22,11 +22,13 @@ function App() {
     </HashRouter>
 
     // M U S T  D O
+    // TODO po kliknuti na banner nad fotkou nak sa scrollne dolu na kontakt
 
     // N I C E  T O  D O
     // TODO add back button to the pages - experience, projects
     // TODO projects page - filtrovanie podľa roku?
     // TODO refactor experiencepage.tsx, experiencetimeline.tsx, timelinehelpers.ts
+    // TODO nefnuguje scroll down
 
     // D O E S  N O T  M A T T E R
     // TODO pri hovery nech sa objavia podrobnosti o pracovnej pozicii na experience page?

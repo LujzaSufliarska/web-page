@@ -28,7 +28,7 @@ export default function ExperienceTimeline({
 
   const allExperiences = Object.values(t("positions", { returnObjects: true }));
   const allMilestones = Object.values(
-    t_mils("milestones", { returnObjects: true }),
+    t_mils("milestones", { returnObjects: true })
   );
   // sortnute neskor v assignpositiontolines in helper functions
   const allEvents = [...allExperiences, ...allMilestones];
@@ -42,7 +42,7 @@ export default function ExperienceTimeline({
   const endMonth = lastJobEnd.getMonth();
 
   const durationMonths = (endYear - startYear) * 12 + (endMonth - startMonth);
-  const yearsCount = Math.ceil(durationMonths / 12) + 1; // TODO +1 ked zacina nieco pred rokom 2021 inak to prida 2026 aj ked este neni,; pobodne +2 dunno uvidime ako to pojde vekom; predtym bolo floor ale zaciatkom roka (februar) tam nechcelo ukazat 2026 - zmenene na ceil
+  const yearsCount = Math.floor(durationMonths / 12) + 1; // TODO +1 ked zacina nieco pred rokom 2021 inak to prida 2026 aj ked este neni,; pobodne +2 dunno uvidime ako to pojde vekom
 
   // const pxPerMonth = Math.max(
   //   25,
@@ -86,7 +86,7 @@ export default function ExperienceTimeline({
     allEvents,
     firstJobStart,
     durationMonths,
-    pxPerMonth,
+    pxPerMonth
   );
 
   const totalLines =
@@ -98,7 +98,7 @@ export default function ExperienceTimeline({
       i18n.language === "sk" ? "sk-SK" : "en-US",
       {
         month: "short",
-      },
+      }
     );
     const year = date.getFullYear(); //startMonth + i -> date roll over into a different year 12 is jan
 
@@ -247,7 +247,7 @@ export default function ExperienceTimeline({
             const { position, lineIndex, startPx, barWidth } = positionData;
             const tooltipPos = getTooltipPosition(
               mousePosition.x,
-              mousePosition.y,
+              mousePosition.y
             );
 
             const color = positionData.position.job_sector ? "green" : "blue";
