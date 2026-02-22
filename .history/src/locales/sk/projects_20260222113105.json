@@ -1,6 +1,6 @@
 {
     "section": "Projekty",
-    "filters": ["Všetky", "Web", "Mobil", "Záverečné Práce", "Iné"],
+    "filters": ["Všetky", "Web", "Mobil", "Iné"],
     "projects": {
         "project1": {
             "img": "./projects/WebPage.png",
@@ -14,7 +14,7 @@
             "name": "Prototypovanie používateľského rozhrania pre aplikáciu umelej inteligencie",
             "description": "Moja bakalárska práca - UI prototyp v Axure RP s viacerými nasimulovanými užitočnými aplikáciami AI v doméne medicíny. Implementácia bola testovaná s reálnymi používateľmi.\n\nPrototyp: https://oxl0az.axshare.com/?id=xmgk1t&p=1_-_main",
             "year": "2024",
-            "type": "Záverečné Práce",
+            "type": "Iné",
             "skills": "Prototyp, Axure RP, Testovanie, WOZ, Bakalárska Práca"
         }
     },

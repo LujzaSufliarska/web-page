@@ -1,6 +1,6 @@
 {
     "section": "Projects",
-    "filters": ["All", "Web", "Mobile", "Theses", "Other"],
+    "filters": ["All", "Web", "Mobile", "Other"],
     "projects": {
         "project1": {
             "img": "./projects/WebPage.png",
@@ -15,7 +15,7 @@
             "name": "Prototyping user interface for AI application",
             "description": "My bachelor thesis project - UI prototype in Axure RP with simulation of multiple useful AI applications in medical domain. Implementation was tested with real users.\n\nPrototype: https://oxl0az.axshare.com/?id=xmgk1t&p=1_-_main",
             "year": "2024",
-            "type": "Theses",
+            "type": "Web",
             "skills": "Prototype, Axure RP, Testing, WOZ, Bachelor Thesis"
         }
     },
