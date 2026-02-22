@@ -55,7 +55,6 @@ export default {
         3: "24px",
         4: "32px",
         5: "40px",
-        6: "56px",
         button: "12px",
         medium: "80px",
       },

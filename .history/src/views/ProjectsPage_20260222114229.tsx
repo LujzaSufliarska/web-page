@@ -52,7 +52,7 @@ export default function ProjectsPage() {
         </div>
 
         {showFilter && (
-          <ul className="flex flex-col justify-between px-8 text-[var(--bcg-text)]">
+          <ul className="flex flex-col w-2/5 justify-between px-8 text-[var(--bcg-text)]">
             {filtersType.map((filter, index) => (
               <li
                 key={index}
@@ -72,7 +72,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* DESKTOP FILTER MENU */}
-      <ul className="hidden sm:flex gap-6 justify-between px-wrapper border-solid border-b-2 border-[var(--primary)] text-[var(--bcg-text)]">
+      <ul className="hidden sm:flex w-2/5 justify-between px-wrapper border-solid border-b-2 border-[var(--primary)] text-[var(--bcg-text)]">
         {filtersType.map((filter, index) => (
           <li
             key={index}

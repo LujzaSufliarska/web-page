@@ -72,7 +72,7 @@ export default function ProjectsPage() {
       </div>
 
       {/* DESKTOP FILTER MENU */}
-      <ul className="hidden sm:flex gap-6 justify-between px-wrapper border-solid border-b-2 border-[var(--primary)] text-[var(--bcg-text)]">
+      <ul className="hidden sm:flex gap-2 justify-between px-wrapper border-solid border-b-2 border-[var(--primary)] text-[var(--bcg-text)]">
         {filtersType.map((filter, index) => (
           <li
             key={index}
