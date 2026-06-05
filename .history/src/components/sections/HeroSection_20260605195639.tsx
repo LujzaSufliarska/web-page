@@ -12,8 +12,8 @@ export default function HeroSection() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "CV_Lujza_Šufliarska_2026_sk.pdf";
-    link.download = "CV_Lujza_Šufliarska_2026_sk.pdf";
+    link.href = "CV_Lujza_Šufliarska_2025.pdf";
+    link.download = "CV_Lujza_Šufliarska_2025.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

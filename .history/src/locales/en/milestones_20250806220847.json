@@ -9,17 +9,12 @@
         },
         "Uni2": {
             "position": "Master Studies",
-            "period": "September 2024 - June 2026",
-            "company_name": "FIIT STU"
-        },
-        "Uni3": {
-            "position": "PhD Studies",
-            "period": "September 2026 - present",
+            "period": "September 2024 - present",
             "company_name": "FIIT STU"
         }
     },
     "not_used_milestones": {
-        "HighSchool": {
+                "HighSchool": {
             "position": "High School Student",
             "period": "September 2017 - June 2021",
             "company_name": "Gymnázium Ľudovíta Štúra Zvolen"

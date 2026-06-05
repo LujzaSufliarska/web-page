@@ -7,7 +7,7 @@
     "title2": "Schopnosti",
     "skills": {
         "Vývoj": ["Python", "Java", "HTML", "CSS", "Tailwind", "Unity"],
-        "Dáta": ["PostgreSQL", "Oracle SQL Developer", "SQL Server Management Studio", "Power BI", "SQL Server Reporting Services (SSRS)", "Master Data Services (MDS)"],
+        "Dáta": ["PostgreSQL", "Oracle SQL Developer", "SQL Server Management Studio", "Power BI"],
         "Dizajn": ["Figma", "Axure", "Adobe Photoshop", "Adobe Illustrator"],
         "Nástroje": ["GitHub", "Git", "Jira"],
         "Iné": ["Adobe PremierePro", "Microsoft Office"]

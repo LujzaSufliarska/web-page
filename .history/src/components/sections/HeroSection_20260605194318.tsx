@@ -12,8 +12,8 @@ export default function HeroSection() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "CV_Lujza_Šufliarska_2026_sk.pdf";
-    link.download = "CV_Lujza_Šufliarska_2026_sk.pdf";
+    link.href = "CV_Lujza_Šufliarska_2025.pdf";
+    link.download = "CV_Lujza_Šufliarska_2025.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -61,9 +61,9 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <div className="flex flex-row gap-4">
+            <div>
               <a
-                href="CV_Lujza_Šufliarska_2026_en.pdf"
+                href="CV_Lujza_Šufliarska_2025.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -75,7 +75,7 @@ export default function HeroSection() {
                 />
               </a>
               <a
-                href="CV_Lujza_Šufliarska_2026_sk.pdf"
+                href="CV_Lujza_Šufliarska_2025.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

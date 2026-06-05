@@ -11,7 +11,7 @@
             "company_location": "On-site (Bratislava, Slovakia)",
             "company_type": "Part-time",
             "job_sector": "Education",
-            "description": "Conducting exercises for the course Principles of Computer Engineering (PPI) during the winter semester of the academic year 2025/2026\n\nMain responsibilities:\n🔹leading practical exercises\n🔹providing student support and consultations\n🔹evaluating assignments\n🔹assisting with supervision during assessments\n\nAdditional activities:\n🔹contributing to supplementary learning materials\n🔹participating in tutoring sessions for students\n\nTopics covered:\n🔹bool algebra\n🔹logisim\n🔹rexim\n🔹mipsim\n\nhttps://www.youtube.com/playlist?list=PL6WlsTONDxSb0dI_j5WSSHfgT3G8JyR-G",
+            "description": "Conducting exercises for the course Principles of Computer Engineering (PPI) during the winter semester of the academic year 2025/2026\n\nMain responsibilities:\n🔹leading practical exercises\n🔹providing student support and consultations\n🔹evaluating assignments\n🔹assisting with supervision during assessments\n\nAdditional activities:\n🔹contributing to supplementary learning materials\n🔹participating in tutoring sessions for students\n\nTopics covered:\n🔹bool algebra\n🔹logisim\n🔹rexim\n🔹mipsim\nhttps://www.youtube.com/playlist?list=PL6WlsTONDxSb0dI_j5WSSHfgT3G8JyR-G",
             "attributes": ""
         },
         "mbank2": {
@@ -22,7 +22,7 @@
             "company_type": "Part-time",
             "job_sector": "IT",
             "description": "🔹SQL queries (Oracle SQL Developer, SSMS)\n🔹ad-hoc analyses\n🔹building and maintaining Power BI dashboards\n🔹processing data in Excel – using functions, pivot tables, reports, …\n🔹evaluating promo campaigns and investigating customer complaints related to promo payouts\n🔹collaborating with data engineers on datamart requirements and data structure specifications\n🔹troubleshooting data inconsistencies and reporting findings",
-            "attributes": "Jira, Oracle SQL Developer, SQL Server Management Studio, Power BI, SSRS, Excel, MDS, Requirement Specifications, Data Analysis, Data Troubleshooting"
+            "attributes": "Jira, Oracle SQL Developer, SQL Server Management Studio, Microsoft Power BI, SQL Server Reporting Services (SSRS), Excel, MDS, Requirement Specifications, Data Analysis, Data Troubleshooting"
         },
         "decathlon": {
             "position": "Sport Advisor",

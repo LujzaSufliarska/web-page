@@ -11,7 +11,7 @@
             "company_location": "Prezenčne (Bratislava, Slovakia)",
             "company_type": "Part-time",
             "job_sector": "Vzdelávanie",
-            "description": "Vedenie cvičení v predmete Princípy Počítačového Inžinierstva (PPI) počas zimného semestra akademického roka 2025/2026\n\nHlavné povinnosti:\n🔹vedenie praktických cvičení\n🔹poskytovanie podpory a konzultácií študentom\n🔹hodnotenie zadaní\n🔹asistencia pri dozore počas previerok\n\nDoplnkové aktivity:\n🔹spolupráca na tvorbe doplnkových študijných materiálov\n🔹účasť na doučovaniach pre študentov\n\nPreberané témy:\n🔹bool algebra\n🔹logisim\n🔹rexim\n🔹mipsim\n\nhttps://www.youtube.com/playlist?list=PL6WlsTONDxSb0dI_j5WSSHfgT3G8JyR-G",
+            "description": "Vedenie cvičení v predmete Princípy Počítačového Inžinierstva (PPI) počas zimného semestra akademického roka 2025/2026\n\nHlavné povinnosti:\n🔹vedenie praktických cvičení\n🔹poskytovanie podpory a konzultácií študentom\n🔹hodnotenie zadaní\n🔹asistencia pri dozore počas previerok\n\nDoplnkové aktivity:\n🔹spolupráca na tvorbe doplnkových študijných materiálov\n🔹účasť na doučovaniach pre študentov\n\nPreberané témy:\n🔹bool algebra\n🔹logisim\n🔹rexim\n🔹mipsim\nhttps://www.youtube.com/playlist?list=PL6WlsTONDxSb0dI_j5WSSHfgT3G8JyR-G",
             "attributes": ""
         },
         "mbank2": {
@@ -21,8 +21,8 @@
             "company_location": "Hybrid (Bratislava, Slovensko)",
             "company_type": "Part-time",
             "job_sector": "IT",
-            "description": "🔹SQL dopyty (Oracle SQL Developer, SSMS)\n🔹ad-hoc analýzy\n🔹tvorba a aktualizácia Power BI dashboardov\n🔹spracovanie dát v Exceli – používanie funkcií, tvorba reportov, kontingenčné tabuľky, …\n🔹vyhodnocovanie promo kampaní a riešenie reklamácií zákazníkov týkajúcich sa promo výplat\n🔹spolupráca s dátovými inžiniermi na požiadavkách pre datamart a špecifikáciách dátových štruktúr\n🔹riešenie nezrovnalostí v dátach a reportovanie zistení",
-            "attributes": "Jira, Oracle SQL Developer, SQL Server Management Studio, Power BI, SSRS, Excel, MDS, Špecifikácia Požiadaviek, Analýza Dát, Riešenie Problémov s Dátami"
+            "description": "🔹SQL dopyty (Oracle SQL Developer, SSMS)\n🔹ad-hoc analýzy\n🔹aktualizácia existujúcich Power BI dashboardov\n🔹vytváranie nových Power BI dashboardov\n🔹spracovanie dát v Exceli – používanie funkcií, tvorba reportov, kontingenčné tabuľky, …",
+            "attributes": "Oracle SQL Developer, SQL Server Management Studio, Excel, Jira, Power BI"
         },
         "decathlon": {
             "position": "Športový Poradca",

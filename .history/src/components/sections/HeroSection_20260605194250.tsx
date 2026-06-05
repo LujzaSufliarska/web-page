@@ -12,8 +12,8 @@ export default function HeroSection() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "CV_Lujza_Šufliarska_2026_sk.pdf";
-    link.download = "CV_Lujza_Šufliarska_2026_sk.pdf";
+    link.href = "CV_Lujza_Šufliarska_2025.pdf";
+    link.download = "CV_Lujza_Šufliarska_2025.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -61,32 +61,30 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <div className="flex flex-row gap-4">
-              <a
-                href="CV_Lujza_Šufliarska_2026_en.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  label={t("button1")}
-                  icon={<GoDownload />}
-                  onClick={() => {}}
-                  // onClick={handleDownload}
-                />
-              </a>
-              <a
-                href="CV_Lujza_Šufliarska_2026_sk.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  label={t("button2")}
-                  icon={<GoDownload />}
-                  onClick={() => {}}
-                  // onClick={handleDownload}
-                />
-              </a>
-            </div>
+            <a
+              href="CV_Lujza_Šufliarska_2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                label={t("button1")}
+                icon={<GoDownload />}
+                onClick={() => {}}
+                // onClick={handleDownload}
+              />
+            </a>
+            <a
+              href="CV_Lujza_Šufliarska_2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                label={t("button2")}
+                icon={<GoDownload />}
+                onClick={() => {}}
+                // onClick={handleDownload}
+              />
+            </a>
           </div>
         </div>
         <Socials />

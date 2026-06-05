@@ -7,7 +7,7 @@
     "title2": "My Skills",
     "skills": {
         "Development": ["Python", "Java", "HTML", "CSS", "Tailwind", "Unity"],
-        "Data": ["PostgreSQL", "Oracle SQL Developer", "SQL Server Management Studio", "Power BI", "SQL Server Reporting Services (SSRS)", "Master Data Services (MDS)"],
+        "Data": ["PostgreSQL", "Oracle SQL Developer", "SQL Server Management Studio", "Power BI"],
         "Design": ["Figma", "Axure", "Adobe Photoshop", "Adobe Illustrator"],
         "Tools": ["GitHub", "Git", "Jira"],
         "Other": ["Adobe PremierePro", "Microsoft Office"]
